@@ -11,6 +11,122 @@ int autobusest_max=5;
 int autobusesc_max=2;
 int vagonetas_max=4;
 
+int tepotzotlan(){
+  for(int i=0;i<5;i++){
+    for(int j=0;j<3;j++){
+        printf("%c",matriz[i][j]);
+    }
+    printf("\n");
+  }
+  
+  puts("Ingresa la fila que deseas apartar (1-5)");
+  scanf("%d",&F);
+  puts("Ingresa la columna que deseas apartar (1-3)");
+  scanf("%d",&C);
+  
+  F=F-1;
+  C=C-1;
+  if(matriz[F][C]=='O'){
+    puts("El asiento ya esta ocupado");
+    printf("¿Deseas continuar con la reserva? (Y/N)\n");
+    getchar();
+    scanf("%c",&s);
+    if (s==Y || s==y){
+      destinoTepotzotlan();
+    }else{
+      printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.");
+      system("exit");
+    }
+
+  }else{
+    if(F<5 && F>=0 && C<3 && C>=0){
+        puts("Su asiento ha sido reservado\n")
+        matriz[F][C]= 'O';
+
+    }else{ 
+      puts("EL numero de filas o columnas esta mal ingresado");
+      printf("¿Deseas continuar con la reserva? (Y/N)\n");
+      getchar();
+      scanf("%c",&s);
+      if (s==Y || s==y){
+        destinoTepotzotlan();
+      }else{
+        printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.");
+        system("exit");
+      }
+    }
+  }
+
+  for(int i=0;i<5;i++){
+    for(int j=0;j<3;j++){
+        printf("%c",matriz[i][j]);
+    }
+    printf("\n");
+  }
+  
+  return 0;
+}
+
+int valledebravo(){
+  for(int i=0;i<5;i++){
+    for(int j=0;j<3;j++){
+        printf("%c",matriz[i][j]);
+    }
+    printf("\n");
+  }
+  
+  puts("Ingresa la fila que deseas apartar (1-5)");
+  scanf("%d",&F);
+  puts("Ingresa la columna que deseas apartar (1-3)");
+  scanf("%d",&C);
+  
+  F=F-1;
+  C=C-1;
+  if(matriz[F][C]=='O'){
+    puts("El asiento ya esta ocupado");
+    printf("¿Deseas continuar con la reserva? (Y/N)\n");
+    getchar();
+    scanf("%c",&s);
+    if (s==Y || s==y){
+      destinoValleDelBravo();
+    }else{
+      printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+      system("exit");
+    }
+
+  }else{
+    if(F<5 && F>=0 && C<3 && C>=0){
+        puts("Su asiento ha sido reservado\n")
+        matriz[F][C]= 'O';
+
+    }else{ 
+      puts("EL numero de filas o columnas esta mal ingresado");
+      printf("¿Deseas continuar con la reserva? (Y/N)\n");
+      getchar();
+      scanf("%c",&s);
+      if (s==Y || s==y){
+        destinoValleDelBravo();
+      }else{
+        printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+        system("exit");
+      }
+    }
+  }
+
+  for(int i=0;i<5;i++){
+    for(int j=0;j<3;j++){
+        printf("%c",matriz[i][j]);
+    }
+    printf("\n");
+  }
+  
+  return 0;
+}
+
+
+}
+
+
 int registro(){
 
   FILE *file = fopen("Registro de Usuarios.txt", "w");
@@ -44,47 +160,52 @@ int registro(){
 
 
 int destinoCircuitoHistorico(){
- char matriz[10][7]={
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}
+ char matriz[10][6]={
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}
       };
- 
+ for(i=0; i<10; i++){
+  for(j=0; j<6; j++){
+    printf("%c", matriz[i][j]);
+  }
+
+ }
 }
 int destinoTourGastronmico (){
- char matriz[10][7]={
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}
+ char matriz[10][6]={
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}
       };
  
 }
 int destinoParqueLaMexicana(){
- char matriz[10][7]={
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}, 
-        {'L', 'L', 'L', ' ', 'L', 'L', 'L'}
+ char matriz[10][6]={
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}, 
+        {'L', 'L', 'L', 'L', 'L', 'L'}
       };
  
 }
@@ -105,54 +226,58 @@ int destinoUniversum(){
 }
 
 int destinoPuebla(){
-  char matriz [10][5]={
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'}
+  char matriz [10][4]={
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'}
     
   };
 }
 
 int destinoQueretaro(){
-  char matriz [10][5]={
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'}
+  char matriz [10][4]={
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'}
     
   };
 }
 
 int destinoHidalgo(){
-  char matriz [10][5]={
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'},
-    {'L', 'L',' ','L', 'L'}
+  char matriz [10][4]={
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'},
+    {'L', 'L','L', 'L'}
     
   };
 }
 
 int destinoTepotzotlan(){
+    int F, C;
+    char s;
+    char Y='Y';
+    char y='y';
    char matriz[5][3] = {
     {'L','L','L'},
     {'L','L','L'},
@@ -161,12 +286,12 @@ int destinoTepotzotlan(){
     {'L','L','L'}
 
     };
-   
-  return 0;
+    
+
 }
 
 int destinoValleDelBravo(){
-   char matriz[5][3] = {
+   char matriz[4][2] = {
     {'L','L','L'},
     {'L','L','L'},
     {'L','L','L'},
@@ -190,11 +315,7 @@ int main(){
   puts("Presiona Enter para continuar");
   getchar();
 
-  puts("Ingresa tu nombre completo");
-  scanf("%s",nombre);
-  
-  puts("Ingresa tu correo electronico");
-  scanf("%s",correo);
+  registro();
   
   puts("Estos son nuestros viajes disponibles:\n");
   puts("a) Viajes turisticos:");
@@ -213,6 +334,16 @@ int main(){
       puts("3.-Parque "La Mexicana"");
       puts("4.-Universum\n");
       scanf("%i",&op);
+      switch (op)
+      {
+      case 1:
+        puts("Usted eligió Circuito Historico");
+        
+        break;
+      
+      default:
+        break;
+      }
       break;
 
     case b:
@@ -257,6 +388,3 @@ int main(){
 
   return 0;
 }
-
-
-
