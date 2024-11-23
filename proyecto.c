@@ -1,5 +1,10 @@
 #include<stdio.h>
-int main(){
+
+
+int main()
+{
   puts("Hola mundo");
+  puts("No");
   return 0;
+
 }
