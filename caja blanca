@@ -1,98 +1,63 @@
 Análisis de Caja Blanca
 Algoritmo:
 
-
 1. Hacer directorio 'Tickets'
-
 2. Hacer max_numero=0
 3. Abrir directorio 'Tickets'
-
 4. Si 'Tickets' no existe  
     4.1 Marcar error
     4.2 regresar max_numero
-
 5. Mientras existan archivos en el directorio  
     5.1 Filtrar solo archivos regulares
     5.2 Obtener el numero de archivos con nombre 'Ticket_"numero"'
     5.3 Hacer max_numero con el numero de archivos
-
 6. Regresar max_numero
 7. Cerrar 'Tickets' 
-
-
 8. Hacer o abrir archivo 'Historico.txt'
 9. Si 'Historico.txt' no existe   
     9.1 regresar error
-
 10. Mostrar matrix dentro del archivo 'Historico.txt'
 11. Cerrar archivo
-
-
 12. Hacer o abrir archivo 'Gastronomico.txt'
 13. Si 'Gastronomico.txt' no existe   
     13.1 regresar error
-
 14. Mostrar matrix dentro del archivo 'Gastronomico.txt'
 15. Cerrar archivo
-
-
 16. Hacer o abrir archivo 'Parque.txt'
 17. Si 'Parque.txt' no existe   
     17.1 regresar error
-
 18. Mostrar matrix dentro del archivo 'Parque.txt'
 19. Cerrar archivo
-
-
 20. Hacer o abrir archivo 'Universum.txt'
 21. Si 'Universum.txt' no existe   
     21.1 regresar error
-
 22. Mostrar matrix dentro del archivo 'Universum.txt'
 23. Cerrar archivo
-
-
 24. Hacer o abrir archivo 'Puebla.txt'
 25. Si 'Puebla.txt' no existe   
-    25.1regresar error
-
+    25.1 regresar error
 26. Mostrar matrix dentro del archivo 'Puebla.txt'
 27. Cerrar archivo
-
-
 28. Hacer o abrir archivo 'Queretaro.txt'
 29. Si 'Queretaro.txt' no existe   
     29.1 regresar error
-
 30. Mostrar matrix dentro del archivo 'Queretaro.txt'
 31. Cerrar archivo
-
-
 32. Hacer o abrir archivo 'Hidalgo.txt'
 33. Si 'Hidalgo.txt' no existe   
     33.1 regresar error
-
 34. Mostrar matrix dentro del archivo 'Hidalgo.txt'
 35. Cerrar archivo
-
-
 36. Hacer o abrir archivo 'Tepotzotlan.txt'
 37. Si 'Tepotzotlan.txt' no existe   
     37.1 regresar error
-
 38. Mostrar matrix dentro del archivo 'Tepotzotlan.txt'
 39. Cerrar archivo
-
-
 40. Hacer o abrir archivo 'Valle.txt'
 41. Si 'Valle.txt' no existe   
     41.1 regresar error
-
 42. Mostrar matrix dentro del archivo 'Valle.txt'
 43. Cerrar archivo
-
-
-
 44. Mostrar "Bienvenido a la compañía TravelBus"
 45. Mostrar "Explora nuestras opciones de viajes y reserva en minutos"
 46. Mientras continuar
@@ -102,17 +67,14 @@ Algoritmo:
     46.4 Mostrar "Ingrese su correo electronico: "
     46.5 Dar y almacenar una cadena de caracteres representado por 'correo'
     46.6 Mostrar "Ingrese su número de teléfono: "
-    46.7 Dar y almacenar una cadena de caracteres representado por 'telefono'
-    
+    46.7 Dar y almacenar una cadena de caracteres representado por 'telefono'   
     46.8 Hacer indefinidamente
         46.8.1 Mostrar "Estos son nuestros viajes disponibles:"
         46.8.2 Mostrar "a) Viajes turísticos:  b) Viajes nacionales:  c) Pueblos mágicos:"
         46.8.3 Dar y almacenar un caracter representado por 'tipo' que elija el tipo viaje
-
-        46.8.Si tipo==a
+        46.8.4 Si tipo==a
             46.8.4.1 Mostrar "¿A qué destino deseas ir?"
             46.8.4.2 Mostrar "1.- Circuito Histórico  2.- Tour Gastronómico  3.- Parque 'La Mexicana'  4.- Universum"
-                
             46.8.4.3 Hacer 'destino_valido'=0
             46.8.4.4 Hacer indefinidamente
                 46.8.4.4.1 Dar y almacenar un numero de tipo entero representado por 'op'
@@ -120,12 +82,9 @@ Algoritmo:
                     46.8.4.4.2.1 Mostrar "Entrada inválida, por favor ingrese un número."
                 46.8.4.4.3 En caso contrario
                     46.8.4.4.3.1 Hacer 'destino_valido'=1
-            46.8.4.5 Mientras 'destino_valido' sea diferente a 0
-                
+            46.8.4.5 Mientras 'destino_valido' sea diferente a 0  
             46.8.4.6 Si op==1   
-
                 46.8.4.6.1 Hacer "Circuito Historico"='destino'
-
                 46.8.4.6.2 Hacer indefinidamente
                     46.8.4.6.2.1 Mostrar "Seleccione un asiento (fila y columna)" 
                     46.8.4.6.2.2 Mostrar "Fila (1-10)"
@@ -134,7 +93,6 @@ Algoritmo:
                     46.8.4.6.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
                     46.8.4.6.2.6 Hacer 'fila'-1
                     46.8.4.6.2.7 Hacer 'columna'-1
-
                     46.8.4.6.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                         46.8.4.6.2.8.1 Si la posición 'fila','columna'=='L'
                             46.8.4.6.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -148,8 +106,7 @@ Algoritmo:
                 46.8.4.6.3 Mientras el proceso este activo
                 46.8.4.6.4 Hacer indefinidamente                 
                     46.8.4.6.4.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): "
-                    46.8.4.6.4.2 Dar y almacenar un valor de tipo entero representado por 're
-                    servacion'
+                    46.8.4.6.4.2 Dar y almacenar un valor de tipo entero representado por 'reservacion'
                     46.8.4.6.4.3 Si reservacion==0
                         46.8.4.6.4.3.1 Hacer continuar=0
                     46.8.4.6.4.4 En caso contrario
@@ -157,112 +114,113 @@ Algoritmo:
                             46.8.4.6.4.4.1.1 Hacer continuar=1
                         46.8.4.6.4.4.2 En caso contrario
                             46.8.4.6.4.4.2.1 Mostrar "Opción inválida. Intente de nuevo."
-                           46.8.4.6.4.4.2.2 Hacer reservacion=-1
-                46.8.4.6.5. Mientras reservacion=-1         8.4.6.6. Hacer archivo 'Historico.txt'
-                46.8.4.6.6 Si 'Historico.txt' no existe
-                    46.8.4.6.6.1 Mostrar "Error al abrir el archivo Historico.txt"
-                    46.8.4.6.6.2 Regresar error
+                            46.8.4.6.4.4.2.2 Hacer reservacion=-1
+                46.8.4.6.5 Mientras reservacion=-1         
+                46.8.4.6.6 Hacer archivo 'Historico.txt'
+                46.8.4.6.7 Si 'Historico.txt' no existe
+                    46.8.4.6.7.1 Mostrar "Error al abrir el archivo Historico.txt"
+                    46.8.4.6.7.2 Regresar error
                 46.8.4.6.8 Mostrar matriz dentro del archivo 'Historico.txt'
-                46.8.4.6.9     
-
-                Mostrar "Gracias por usar TravelBus. ¡Buen viaje!"            
-            op==24                46.8.3.7.1 Hacer "Tour Gastronomico"='destino'
+                46.8.4.6.9 Mostrar "Gracias por usar TravelBus. ¡Buen viaje!"            
+            46.8.4.7 Si op==2     
+                46.8.4.6.1 Hacer "Tour Gastronomico"='destino'
                 46.8.3.7.2 Hacer indefinidamente
-                46.8.4.7.3 Mostrar "Seleccione un asiento (fila y columna)" 
-                46.8.4.7.4 Mostrar "Fila (1-10)"
-                46.8.4.7.5 Dar y almacenar un valor de tipo entero representado por 'filas'
-                46.8.4.7.6 Mostrar "Columna (1-6)"
-                46.8.4.7.7 Dar y almacenar un valor de tipo entero representado por 'columnas'
-                46.8.4.7.8 Hacer 'fila'-1
-                46.8.4.7.9 Hacer 'columna'-1
-
-4                46.8.4.7.10 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
-                    46.8.3.7.10.1 Si la posición 'fila','columna'=='L'
-                     4  46.8.3.7.10.1.1 Hacer la posicion 'fila', 'columna'='O'
-                        44.8.3.7.10.1.2 Mostrar "Asiento reservado correctamente"
-                        46.8.4.7.10.1.3 Hacer filaSeleccionada=fila+1
-                        46.8.4.7.10.1.4 Hacer columnaSeleccionada=columna+1
-                    46.8.3.7.40.2 En caso contrario
-                        46.8.4.7.10.2.1 Mostrar "El asiento ya está ocupado. Elija otro."       
-                46.8.3.7.41 En caso contrario
-                        46.8.4.7.11.1 Mostrar "Asiento inválido. Intente de nuevo. "
-                46.8.4.7.12 Mientras el proceso este activo
-                
-4                46.8.3.7.13 Hacer archivo 'Gastronomico.txt'
-                46.8.4.7.14 Si 'Gastronomico.txt' no existe
-                    46.8.3.7.14.1 Mostrar "Error al abrir el archivo 'Gastronomico.txt'"
-                    44.8.3.7.14.2 Regresar error
-                    44.8.3.7.14.3 Mostrar matriz dentro del archivo 'Gastronomico.txt'
-                
-4            46.8.3.8 Si o4==3
-                46.8.3.8.1 Hacer "Parque "La Mexicana""='destino'
-               3.8.24Hacer indefinidamente
-                46.8.3.8.2 Mostrar "Seleccione un asiento (fila y columna)" 
-                46.8.3.8.3 Mostrar "Fila (1-10)"
-                46.8.3.8.4 Dar y almacenar un valor de tipo entero representado por 'filas'
-                46.8.3.8.5 Mostrar "Columna (1-6)"
-                46.8.3.8.6 Dar y almacenar un valor de tipo entero representado por 'columnas'
-                46.8.3.8.7 Hacer 'fila'-1
-                46.8.3.8.8 Hacer 'columna'-1
-
-                46.8.3.8.9 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
-                        46.8.3.8.9.1 Si la posición 'fila','columna'=='L'
-                            46.8.3.8.9.2 Hacer la posicion 'fila', 'columna'='O'
-                            46.8.3.8.9.3 Mostrar "Asiento reservado correctamente"
-                            46.8.3.8.9.4 Hacer filaSeleccionada=fila+1
-                             46.8.3.8.9.5 Hacer columnaSeleccionada=columna+1
-                        46.8.3.8.9.6 En caso contrario
-                            46.8.3.8.10.1 Mostrar "El asiento ya está ocupado. Elija otro."       
-                46.8.3.8.10 En caso contrario
-                    Mostrar "Asiento inválido. Intente de nuevo. "
-                    Mientras el proceso este activo
-                
-                Hacer archivo 'Parque.txt'
-                Si 'Parque.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Parque.txt'"
-                    Regresar error
-                Mostrar matriz dentro del archivo 'Parque.txt'
-
-            Si op==4
-
-                Hacer "Universum"='destino'
-                                Hacer indefinidamente
-                    Mostrar "Seleccione un asiento (fila y columna) 
-                    Mostrar "Fila (1-10)"
-                    Dar y almacenar un valor de tipo entero representado por 'filas'
-                    Mostrar "Columna (1-6)"
-                    Dar y almacenar un valor de tipo entero representado por 'columnas'
-                    Hacer 'fila'-1
-                    Hacer 'columna'-1
-
-                    Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
-                        Si la posición 'fila','columna'=='L'
-                            Hacer la posicion 'fila', 'columna'='O'
-                            Mostrar "Asiento reservado correctamente"
-                            Hacer filaSeleccionada=fila+1
-                            Hacer columnaSeleccionada=columna+1
-                        En caso contrario
+                    46.8.4.7.2.1 Mostrar "Seleccione un asiento (fila y columna)" 
+                    46.8.4.7.2.2 Mostrar "Fila (1-10)"
+                    46.8.4.7.2.3 Dar y almacenar un valor de tipo entero representado por 'filas'
+                    46.8.4.7.2.4 Mostrar "Columna (1-6)"
+                    46.8.4.7.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
+                    46.8.4.7.2.6 Hacer "fila"-1
+                    46.8.4.7.2.7 Hacer "columna"-1
+                    46.8.4.7.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
+                        46.8.3.7.2.8.1 Si la posición 'fila','columna'=='L'
+                            46.8.3.7.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
+                            46.8.3.7.2.8.1.2 Mostrar "Asiento reservado correctamente"
+                            46.8.4.7.8.1.1.3 Hacer filaSeleccionada=fila+1
+                            46.8.3.7.2.8.1.4 Hacer columnaSeleccionada=columna+1
+                        46.8.3.7.2.8.2 En caso contrario
+                        46.8.3.7.2.8.2.1 Mostrar "El asiento ya está ocupado. Elija otro."       
+                    46.8.4.7.2.9 En caso contrario
+                        46.8.4.7.2.9.1 Mostrar "Asiento inválido. Intente de nuevo. "
+                46.8.3.7.3 Mientras el proceso este activo
+                46.8.4.7.4 Hacer indefinidamente 
+                    46.8.4.7.4.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): "
+                    46.8.4.7.4.2 Dar y almacenar un valor de tipo entero                     
+                    46.8.4.7.4.3 Si reservacion==0
+                        46.8.4.7.4.3.1 Hacer continuar=0
+                    46.8.4.7.4.4 En caso contrario
+                        46.8.4.7.4.4.1 Si reservacion==1
+                            46.8.4.7.4.4.1.1 Hacer continuar=1
+                        46.8.4.7.4.4.2 En caso contrario
+                            46.8.4.7.4.4.2.1 Mostrar "Opción inválida. Intente de nuevo."
+                            46.8.4.7.4.4.2.2 Hacer reservacion=-1
+                46.8.4.7.5 Mientras reservacion=-1    
+                46.8.3.7.6 Hacer archivo 'Gastronomico.txt'
+                46.8.4.7.7 Si 'Gastronomico.txt' no existe
+                    46.8.3.7.7.1 Mostrar "Error al abrir el archivo 'Gastronomico.txt'"
+                    46.8.3.7.7.2 Regresar error
+                46.8.3.7.8 Mostrar matriz dentro del archivo 'Gastronomico.txt'
+                46.8.3.7.9 Mostrar "Gracias por usar TravelBus. ¡Buen viaje!" 
+            46.8.4.8 Si op==3
+                46.8.4.6.1 Hacer "Parque 'La Mexicana'"='destino'
+                46.8.4.8.2 Hacer indefinidamente
+                    46.8.4.8.2.1 Mostrar "Seleccione un asiento (fila y columna)"         
+                    46.8.4.8.2.2 Mostrar "Fila (1-10)"
+                    46.8.4.8.2.3 Dar y almacenar un valor de tipo entero representado por 'Filas'
+                    46.8.4.8.2.4 Mostrar "Columna (1-6)"
+                    46.8.4.8.2.5 Dar y alacenar un valor de tipo entero representado por 'columnas'
+                    46.8.4.8.2.6 Hacer 'fila'-1
+                    46.8.4.8.2.7 Hacer 'columna'-1
+                    46.8.4.8.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
+                        46.8.4.8.2.8.1 Si la posición 'fila','columna'=='L'
+                            46.8.4.8.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
+                            46.8.4.8.2.8.1.2 Mostrar "Asiento reservado correctamente"
+                            46.8.4.8.2.8.1.3 Hacer filaSeleccionada=fila+1
+                            46.8.4.8.2.8.1.4 Hacer columnaSeleccionada=columna+1
+                        46.8.4.8.2.8.2 En caso contrario
+                            46.8.4.8.2.8.2.1 Mostrar "El asiento ya está ocupado. Elija otro."       
+                46.8.4.8.3 En caso contrario
+                    46.8.4.8.3.1 Mostrar "Asiento inválido. Intente de nuevo. "
+                    46.8.4.8.3.2 Mientras el proceso este activo
+                46.8.4.8.11 Hacer archivo 'Parque.txt'
+                46.8.4.8.12 Si 'Parque.txt' no existe
+                    46.8.4.8.12.1 Mostrar "Error al abrir el archivo 'Parque.txt'"
+                    46.8.4.8.12.2 Regresar error
+                46.8.4.8.13 Mostrar matriz dentro del archivo 'Parque.txt'
+            46.8.3.8.14 Si op==4
+                46.8.3.8.15 Hacer "Universum"='destino'
+                46.8.3.8.15 Hacer indefinidamente
+                    46.8.3.8.15.1 Mostrar "Seleccione un asiento (fila y columna)" 
+                    46.8.3.8.15.2 Mostrar "Fila (1-10)"
+                    46.8.3.8.15.3 Dar y almacenar un valor de tipo entero representado por 'filas'
+                    46.8.3.8.15.4 Mostrar "Columna (1-6)"
+                    46.8.3.8.15.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
+                    46.8.3.8.15.6 Hacer 'fila'-1
+                    46.8.3.8.15.7 Hacer 'columna'-1
+                    46.8.3.8.15.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
+                        46.8.3.8.15.8.1 Si la posición 'fila','columna'=='L'
+                            46.8.3.8.15.8.1.1  Hacer la posicion 'fila', 'columna'='O'
+                            46.8.3.8.15.8.1.2 Mostrar "Asiento reservado correctamente"
+                            46.8.3.8.15.8.1.3 Hacer filaSeleccionada=fila+1
+                            46.8.3.8.15.8.1.4 Hacer columnaSeleccionada=columna+1
+                        46.8.3.8.15.8.2 En caso contrario
                             Mostrar "El asiento ya está ocupado. Elija otro."       
                     En caso contrario
                         Mostrar "Asiento inválido. Intente de nuevo. "
-                Mientras el proceso este activo
-                
-                Hacer archivo 'Universum.txt'
-                Si 'Universum.txt' no existe
+                46.8.3.8.16 Mientras el proceso este activo
+                46.8.3.8.17 Hacer archivo 'Universum.txt'
+                46.8.3.8.18 Si 'Universum.txt' no existe
                     Mostrar "Error al abrir el archivo 'Universum.txt'"
                     Regresar error
-                Mostrar matriz dentro del archivo 'Universum.txt'
-            
-            En caso contrario  
+                46.8.3.8.19 Mostrar matriz dentro del archivo 'Universum.txt'
+            46.8.4.9 En caso contrario  
                 Mostrar "Datos mal ingresados"
                 Continuar
-       
         46.8.4 Si tipo==b
             46.8.4.1 Mostrar"¿A qué destino deseas ir?"
             46.8.4.2 Mostrar "1.- CDMX-Puebla"
             46.8.4.3 Mostrar "2.- CDMX-Querétaro"
             46.8.4.4 Mostrar "3.- CDMX-Hidalgo"
-
             46.8.4.5 Hacer 'destino_valido'=0
             46.8.4.6 Hacer indefinidamente
                 46.8.4.6.1 Dar y almacenar un numero de tipo entero representado por 'op'
@@ -271,10 +229,7 @@ Algoritmo:
                 46.8.4.6.3 En caso contrario
                     46.8.4.6.3.1 Hacer 'destino_valido'=1
             46.8.4.7 Mientras 'destino_valido' sea diferente a 0
-            
-            
             46.8.4.8 Si op==1
-
                 46.8.4.8.1 Hacer "CDMX-Puebla"='destino'
                 46.8.4.8.2 Hacer indefinidamente
                     46.8.4.8.2.1 Mostrar "Seleccione un asiento (fila y columna)"
@@ -284,7 +239,6 @@ Algoritmo:
                     46.8.4.8.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
                     46.8.4.8.2.6 Hacer 'fila'-1
                     46.8.4.8.2.7 Hacer 'columna'-1
-
                     46.8.4.8.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                         46.8.4.8.2.8.1 Si la posición 'fila','columna'=='L'
                             46.8.4.8.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -296,16 +250,12 @@ Algoritmo:
                     46.8.4.8.2.9 En caso contrario
                         46.8.4.8.2.9.1 Mostrar "Asiento inválido. Intente de nuevo. "
                 46.8.4.8.2.1 Mientras el proceso este activo
-                
                 46.8.4.8.2.2 Hacer archivo 'Puebla.txt'
                 46.8.4.8.2.3 Si 'Puebla.txt' no existe
                     46.8.4.8.2.3.1 Mostrar "Error al abrir el archivo 'Puebla.txt'"
                     46.8.4.8.2.3.2 Regresar error
                 46.8.4.8.2.4 Mostrar matriz dentro del archivo 'Puebla.txt'
-
-            
             46.8.4.9 Si op==2
-
                 46.8.4.9.1 Hacer "CDMX-Queretaro"='destino'
                 46.8.4.9.2 Hacer indefinidamente
                     46.8.4.9.2.1 Mostrar "Seleccione un asiento (fila y columna)" 
@@ -315,7 +265,6 @@ Algoritmo:
                     46.8.4.9.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
                     46.8.4.9.2.6 Hacer 'fila'-1
                     46.8.4.9.2.7 Hacer 'columna'-1
-
                     46.8.4.9.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                         46.8.4.9.2.8.1 Si la posición 'fila','columna'=='L'
                             46.8.4.9.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -327,16 +276,12 @@ Algoritmo:
                     46.8.4.9.2.9 En caso contrario
                         46.8.4.9.2.9.1 Mostrar "Asiento inválido. Intente de nuevo. "
                 46.8.4.9.3 Mientras el proceso este activo
-                
                 46.8.4.9.4 Hacer archivo 'Queretaro.txt'
                 46.8.4.9.5 Si 'Queretaro.txt' no existe
                    46.8.4.9.5.1 Mostrar "Error al abrir el archivo 'Queretaro.txt'"
                    46.8.4.9.5.2 Regresar error
                 46.8.4.9.6 Mostrar matriz dentro del archivo 'Queretaro.txt'
-
-            
             46.8.4.10 Si op==3
-
                 46.8.4.10.1 Hacer "CDMX-Hidalgo"='destino'
                 46.8.4.10.2 Hacer indefinidamente
                     46.8.4.10.2.1 Mostrar "Seleccione un asiento (fila y columna)" 
@@ -346,7 +291,6 @@ Algoritmo:
                     46.8.4.10.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
                     46.8.4.10.2.6 Hacer 'fila'-1
                     46.8.4.10.2.7 Hacer 'columna'-1
-
                     46.8.4.10.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                         46.8.4.10.2.8.1 Si la posición 'fila','columna'=='L'
                             46.8.4.10.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -358,17 +302,14 @@ Algoritmo:
                     46.8.4.10.2.9 En caso contrario
                         46.8.4.10.2.9.1 Mostrar "Asiento inválido. Intente de nuevo. "
                 46.8.4.10.3 Mientras el proceso este activo
-                
                 46.8.4.10.4 Hacer archivo 'Hidalgo.txt'
                 46.8.4.10.5 Si 'Hidalgo.txt' no existe
                     46.8.4.10.5.1 Mostrar "Error al abrir el archivo 'Hidalgo.txt'"
                 46.8.4.10.6 Regresar error
                 46.8.4.10.7 Mostrar matriz dentro del archivo 'Hidalgo.txt'
-
             46.8.4.11 En caso contrario  
                 46.8.4.11.1 Mostrar "Datos mal ingresados"
                 46.8.4.11.2 Continuar
-                
         46.8.5 Si tipo==c
             46.8.5.1 Mostrar"¿A qué destino deseas ir?"
             46.8.5.2 Mostrar"1.- CDMX-Tepotzotlán"
@@ -381,7 +322,6 @@ Algoritmo:
             46.8.5.9 En caso contrario
                     46.8.9.1 Hacer 'destino_valido'=1
             46.8.5.10 Mientras 'destino_valido' sea diferente a 0
-            
             46.8.5.10.1 Si op==1
                 46.8.5.10.1.2 Hacer "CDMX-Tepotzotlan"='destino'
                 46.8.5.10.1.3 Mostrar "Seleccione un asiento (fila y columna)" 
@@ -391,7 +331,6 @@ Algoritmo:
                 46.8.5.10.1.7 Dar y almacenar un valor de tipo entero representado por 'columnas'
                 46.8.5.10.1.8 Hacer 'fila'-1
                 46.8.5.10.1.9 Hacer 'columna'-1
-
                 46.8.5.10.1.10 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                     46.8.5.10.1.10.1 Si la posición 'fila','columna'=='L'
                         46.8.5.10.1.10.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -403,18 +342,13 @@ Algoritmo:
                 46.8.5.10.1.11 En caso contrario
                     46.8.5.10.1.11.1 Mostrar "Asiento inválido. Intente de nuevo."
                     46.8.5.10.1.11.2 Mientras el proceso este activo
-                
             46.8.5.10.2 Hacer archivo 'Tepozotlan.txt'
                 46.8.5.10.2.1 Si 'Tepozotlan.txt' no existe
                     46.8.5.10.2.1.1 Mostrar "Error al abrir el archivo 'Tepozotlan.txt'"
                     46.8.5.10.2.1.2 Regresar error
                     46.8.5.10.2.1.3 Mostrar matriz dentro del archivo 'Tepozotlan.txt'
-                
-            
             46.8.5.9 Si op==2
-
                 46.8.5.9.1 Hacer "CDMX-Valle de Bravo"='destino'
-
                 46.8.5.9.2 Hacer indefinidamente
                     46.8.5.9.2.1 Mostrar "Seleccione un asiento (fila y columna)" 
                     46.8.5.9.2.2 Mostrar "Fila (1-5)"
@@ -423,7 +357,6 @@ Algoritmo:
                     46.8.5.9.2.5 Dar y almacenar un valor de tipo entero representado por 'columnas'
                     46.8.5.9.2.6 Hacer 'fila'-1
                     46.8.5.9.2.7 Hacer 'columna'-1
-
                     46.8.5.9.2.8 Si fila >= 0 y fila < filas y columna >= 0 y columna < columnas
                         46.8.5.9.2.8.1 Si la posición 'fila','columna'=='L'
                             46.8.5.9.2.8.1.1 Hacer la posicion 'fila', 'columna'='O'
@@ -435,64 +368,52 @@ Algoritmo:
                     46.8.5.9.2.9 En caso contrario
                         46.8.5.9.2.9.1 Mostrar "Asiento inválido. Intente de nuevo."
                 46.8.5.9.3 Mientras el proceso este activo
-                
                 46.8.5.9.4 Hacer archivo 'Valle.txt'
                 46.8.5.9.5 Si 'Valle.txt' no existe
                     46.8.5.9.5.1 Mostrar "Error al abrir el archivo 'Valle.txt'"
                     46.8.5.9.5.1 Regresar error
                 46.8.5.9.6 Mostrar matriz dentro del archivo 'Valle.txt'
-
-            46.8.5 En caso contrario
-                46.8.5.1 Mostrar "Datos mal ingresados"
-                46.8.5.2 Continuar
-
-        46.8.6 En caso contrario 
-            46.8.6.1 Mostrar "Dato incorrecto, ¡Vuelve a intentarlo!"
-    46.9 Mientras 'seleccion_valida' sea diferente de 0
-
-    46.10 Si destino>0
-        46.10.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
-
-        46.10.2 Hacer archivo 'ticket'
-        46.10.3 Si 'ticket' no existe  
-            46.10.3.1 Mostrar "Error al generar el archivo del ticket"
-            46.10.3.2 Regresar error
-        
-        46.10.4 Mostrar "======================="
-        46.10.5 Mostrar "=   TICKET DE VIAJE   ="
-        46.10.6 Mostrar "======================="
-        46.10.7 Mostrar "Nombre: 'nombre'"
-        46.10.8 Mostrar "Correo: 'correo'"
-        46.10.9 Mostrar "Telefono: 'telefono'"
-        46.10.10 Mostrar "Destino: 'destino'"
-        46.10.11 Mostrar "Asiento: Fila 'fila' Columna 'columna'"
-        46.10.12 Mostrar "Numero de Ticket: 'ticket_numero'"
-        46.10.13 Mostrar "======================="
-
-    46.11 Hacer indefinidamente
-        46.11.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): "
-        46.11.2 Dar y almacenar un valor de tipo entero representado por 'reservacion'
-        46.11.3 Si reservacion==0
-            46.11.3.1 Hacer continuar=0
-        46.11.4 Si reservacion==1
-            46.11.4.5 Hacer continuar=1
-        46.11.5 En caso contrario  
-            46.11.5.6 Mostrar "Opcion invalida, Intente de nuevo"
-            46.11.5.7 Hacer reservacion-1
-    46.12 Mientras reservacion==-1
-
-    46.13 Mostrar "Gracias por usar TravelBus. ¡Buen viaje!"
-
-    46.14 Para 'ticket_numero'>1
-        46.14.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
-        46.14.2 Abrir archivo para lectura
-
-    46.15 Si 'archivo_ticket' no existe
-        46.15.1 Mostrar "Error al abrir el archivo del ticket"
-        46.15.2 Continuar
-
-    46.16 Mostrar "Contenido del ticket 'ticket_numero'"
-    46.17 Mientras texto dentro del archivo exista
-        46.17.1 Mostrar texto del archivo
-    
-    46.18 Cerrar archivo 
+            46.8.5.10 En caso contrario
+                46.8.5.10.1 Mostrar "Datos mal ingresados"
+                46.8.5.10.2 Continuar
+            46.8.5.11 En caso contrario 
+                46.8.5.11.1 Mostrar "Dato incorrecto, ¡Vuelve a intentarlo!"
+        46.8.6 Mientras 'seleccion_valida' sea diferente de 0
+    46.9 Si destino>0
+        46.9.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
+        46.9.2 Hacer archivo 'ticket'
+        46.9.3 Si 'ticket' no existe  
+            46.9.3.1 Mostrar "Error al generar el archivo del ticket"
+            46.9.3.2 Regresar error
+        46.9.4 Mostrar "======================="
+        46.9.5 Mostrar "=   TICKET DE VIAJE   ="
+        46.9.6 Mostrar "======================="
+        46.9.7 Mostrar "Nombre: 'nombre'"
+        46.9.8 Mostrar "Correo: 'correo'"
+        46.9.9 Mostrar "Telefono: 'telefono'"
+        46.9.10 Mostrar "Destino: 'destino'"
+        46.9.11 Mostrar "Asiento: Fila 'fila' Columna 'columna'"
+        46.9.12 Mostrar "Numero de Ticket: 'ticket_numero'"
+        46.9.13 Mostrar "======================="
+    46.10 Hacer indefinidamente
+        46.10.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): "
+        46.10.2 Dar y almacenar un valor de tipo entero representado por 'reservacion'
+        46.10.3 Si reservacion==0
+            46.10.3.1 Hacer continuar=0
+        46.10.4 Si reservacion==1
+            46.10.4.5 Hacer continuar=1
+        46.10.5 En caso contrario  
+            46.10.5.6 Mostrar "Opcion invalida, Intente de nuevo"
+            46.10.5.7 Hacer reservacion-1
+47 Mientras reservacion==-1
+48 Mostrar "Gracias por usar TravelBus. ¡Buen viaje!"
+49 Para 'ticket_numero'>1
+    49.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
+    49.2 Abrir archivo para lectura
+50 Si 'archivo_ticket' no existe
+    50.1 Mostrar "Error al abrir el archivo del ticket"
+    50.2 Continuar
+51 Mostrar "Contenido del ticket 'ticket_numero'"
+52 Mientras texto dentro del archivo exista
+    52.1 Mostrar texto del archivo
+53 Cerrar archivo 
