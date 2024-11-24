@@ -202,7 +202,6 @@ int obtenerUltimoNumeroTicket() {
     DIR *dp = opendir("Tickets");
 
     if (dp == NULL) {
-        perror("opendir");
         return max_numero;
     }
 
