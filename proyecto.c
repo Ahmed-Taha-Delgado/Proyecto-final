@@ -39,6 +39,7 @@ int generar_ticket(char *nombre, char *correo, char *telefono, char *destino, in
 }
 
 
+
 int destinoCircuitoHistorico(){
 
   FILE *Historico=fopen("Historico.txt","w");
@@ -259,23 +260,25 @@ int destinoTepotzotlan(){
 
     };
     
-    for(int i=0; i<10; i++){
-    for(int j=0; j<6; j++){
+    for(int i=0; i<5; i++){
+    for(int j=0; j<3; j++){
       fprintf(Tepotzotlan,"%c", matriz[i][j]);
     }
   fprintf(Tepotzotlan,"\n");
   } 
   fclose(Tepotzotlan);
   return 0;
+
+  
 }
 
 int destinoValleDelBravo(){
   FILE *Valle=fopen("Valle.txt","w");
-if(Valle==NULL){
-  puts("Error al abrir el archivo");
-  return 1;
-}
-   char matriz[4][2] = {
+  if(Valle==NULL){
+    puts("Error al abrir el archivo");
+    return 1;
+  }
+   char matriz[5][3] = {
     {'L','L','L'},
     {'L','L','L'},
     {'L','L','L'},
@@ -284,21 +287,18 @@ if(Valle==NULL){
 
     };
     
-    for(int i=0; i<10; i++){
-    for(int j=0; j<6; j++){
+  for(int i=0; i<5; i++){
+    for(int j=0; j<3; j++){
       fprintf(Valle,"%c", matriz[i][j]);
     }
   fprintf(Valle,"\n");
   } 
-  fclose(Valle);
-  return 0;
+fclose(Valle);
+
+  
+return 0;
 }
   
-  
-
-
-
-
 int main() {
     char Tipo;
     char destino[100];
@@ -332,64 +332,73 @@ int main() {
         scanf(" %c", &Tipo);
 
         switch (Tipo) {
-             case 'a':
-        puts("¿A que destino deseas ir?");
-        puts("1.-Circuito Historico");
-        puts("2.-Tour Gastronómico");
-        puts("3.-Parque 'La MexicanA'");
-        puts("4.-Universum\n");
-        scanf("%i",&op);
-        if (op == 1){ 
-          strcpy(destino, "Circuito Historico");
-        }else
-        if (op == 2){ 
-          strcpy(destino, "Tour Gastronomico");
-        }else
-        if (op == 3){ 
-          strcpy(destino, "Parque 'La MexicanA'");
-        }else
-        if (op == 4){ 
-          strcpy(destino, "Universum");
-        }
-        break;
+          case 'a':
+            puts("¿A que destino deseas ir?");
+            puts("1.-Circuito Historico");
+            puts("2.-Tour Gastronómico");
+            puts("3.-Parque 'La MexicanA'");
+            puts("4.-Universum\n");
+            scanf("%i",&op);
+            if (op == 1){ 
+              strcpy(destino, "Circuito Historico");
+              destinoCircuitoHistorico();
+            }else
+            if (op == 2){ 
+              strcpy(destino, "Tour Gastronomico");
+              destinoTourGastronomico();
+            }else
+            if (op == 3){ 
+              strcpy(destino, "Parque 'La Mexicana'");
+              destinoParqueLaMexicana();
+            }else
+            if (op == 4){ 
+              strcpy(destino, "Universum");
+              destinoUniversum();
+            }
+            break;
+          case 'b':
+            puts("¿A que destino deseas ir?");
+            puts("1.-CDMX-Puebla");
+            puts("2.-CDMX-Queretaro");
+            puts("3.-CDMX-Hidalgo\n");
+            scanf("%i",&op);
+            if (op == 1){ 
+              strcpy(destino, "CDMX-Puebla");
+              destinoPuebla();
+            }else
+            if (op == 2){ 
+              strcpy(destino, "CDMX-Queretaro");
+              destinoQueretaro();
+            }else
+            if (op == 3){ 
+              strcpy(destino, "CDMX-Hidalgo");    
+              destinoHidalgo();
+            
+            }
+            break;
+              
 
-        puts("¿A que destino deseas ir?");
-        puts("1.-CDMX-Puebla");
-        puts("2.-CDMX-Queretaro");
-        puts("3.-CDMX-Hidalgo\n");
-        scanf("%i",&op);
-        if (op == 1){ 
-          strcpy(destino, "CDMX-Puebla");
-        }else
-        if (op == 2){ 
-          strcpy(destino, "CDMX-Queretaro");
-        }else
-        if (op == 3){ 
-          strcpy(destino, "CDMX-Hidalgo");    
-        
-        }
-        break;
-        
+          case 'c':
+            puts("¿A que destino deseas ir?");
+            puts("1.-CDMX-Tepoztzotlán");
+            puts("2.-CDMX-Valle de Bravo");
+            scanf("%i",&op);
+              if (op == 1){ 
+              strcpy(destino, "CDMX-Tepoztzotlan");
+              destinoTepotzotlan();
+            }else
+            if (op == 2){ 
+              strcpy(destino, "CDMX-Valle de Bravo");  
+              destinoValleDelBravo();
+              
+            }
+            break;
 
-        case 'c':
-        puts("¿A que destino deseas ir?");
-        puts("1.-CDMX-Tepoztzotlán");
-        puts("2.-CDMX-Valle de Bravo");
-        scanf("%i",&op);
-          if (op == 1){ 
-          strcpy(destino, "CDMX-Tepoztzotlan");
-        }else
-        if (op == 2){ 
-          strcpy(destino, "CDMX-Valle de Bravo");  
-          
-        }
-        break;
-
-      default:
-          puts("Ingresa alguna de esas opciones a, b, c");
-        
-        break;
-  }
+          default:
+            puts("Ingresa alguna de esas opciones a, b, c");
+            
+             break;
+    }
 
         if (strlen(destino) > 0) {
             generar_ticket(nombre, correo, telefono, destino, ticket_numero);
