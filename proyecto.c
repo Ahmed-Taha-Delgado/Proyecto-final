@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+#include <sys/stat.h> 
 
 int capacidadat_max=60;
 int capacidadac_max=40;
@@ -38,7 +39,145 @@ int generar_ticket(char *nombre, char *correo, char *telefono, char *destino, in
     return 0;
 }
 
+int pueblosmagicos(){ 
+  int F,C;
+  char Y='Y', y='y', s;
 
+  
+  puts("Ingresa la fila que deseas apartar (1-5)");
+  scanf("%d",&F);
+  puts("Ingresa la columna que deseas apartar (1-3)");
+  scanf("%d",&C);
+ 
+  F=F-1;
+  C=C-1;
+  
+  
+
+  if(matriz[F][C]=='O'){
+    puts("El asiento ya esta ocupado");
+    printf("¿Deseas continuar con la reserva? (Y/N)\n");
+    getchar();
+    scanf("%c",&s);
+    if (s==Y || s==y){
+      break;
+    }else{
+      printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+      system("exit");
+    }
+
+
+  }else{}
+    if(F<5 || F>=0 || C<3 || C>=0){
+        puts("Su asiento ha sido reservado\n");
+        matriz[F][C]= 'O';
+    break;
+    }else{
+      puts("EL numero de filas o columnas esta mal ingresado");
+      printf("¿Deseas continuar con la reserva? (Y/N)\n");
+      getchar();
+      scanf("%c",&s);
+      if (s==Y || s==y){
+        
+      }else{
+        printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+        system("exit");
+      }
+    }
+  }
+  
+
+
+int nacionales(){ 
+  int F,C;
+  char Y='Y', y='y', s;
+ 
+  puts("Ingresa la fila que deseas apartar (1-10)");
+  scanf("%d",&F);
+  puts("Ingresa la columna que deseas apartar (1-4)");
+  scanf("%d",&C);
+ 
+  F=F-1;
+  C=C-1;
+
+  if(matriz[F][C]=='O'){
+    puts("El asiento ya esta ocupado");
+    printf("¿Deseas continuar con la reserva? (Y/N)\n");
+    getchar();
+    scanf("%c",&s);
+    if (s==Y || s==y){
+      
+    }else{
+      printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+      system("exit");
+    }
+
+
+  }else{
+    if(F<10 || F>=0 || C<4 || C>=0){
+        puts("Su asiento ha sido reservado\n");
+        matriz[F][C]= 'O';
+
+    }else{
+      puts("EL numero de filas o columnas esta mal ingresado");
+      printf("¿Deseas continuar con la reserva? (Y/N)\n");
+      getchar();
+      scanf("%c",&s);
+      if (s==Y || s==y){
+      
+      }else{
+        printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+        system("exit");
+      }
+    }
+  }
+  
+}
+
+int turisticos(char *nombre){ 
+  int F,C;
+  char Y='Y', y='y', s;
+  
+  
+  puts("Ingresa la fila que deseas apartar (1-10)");
+  scanf("%d",&F);
+  puts("Ingresa la columna que deseas apartar (1-6)");
+  scanf("%d",&C);
+ 
+  F=F-1;
+  C=C-1;
+
+  if(matriz[F][C]=='O'){
+    puts("El asiento ya esta ocupado");
+    printf("¿Desea hacer otra reservación? (1: Sí, 0: No): ");
+    scanf("%d", &continuar);
+    if (s==Y || s==y){
+
+    }else{
+      printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+      system("exit");
+    }
+
+
+  }else{
+    if(F<10 || F>=0 || C<6 || C>=0){
+        puts("Su asiento ha sido reservado\n");
+        matriz[F][C]= 'O';
+
+    }else{
+      puts("EL numero de filas o columnas esta mal ingresado");
+      printf("¿Desea hacer otra reservación? (1: Sí, 0: No): ");
+    scanf("%d", &continuar);;
+      if (s==Y || s==y){
+        
+      }else{
+        printf("Muchas gracias por considerar viajar con nosotros.\n Hasta luego.\n");
+        system("exit");
+      }
+    }
+  }
+  return 0;
+}
 
 int destinoCircuitoHistorico(){
 
@@ -96,7 +235,7 @@ int destinoTourGastronomico (){
   fprintf(Gastronomico,"\n");
   } 
   fclose(Gastronomico);
-
+  turisticos();
   return 0;
 }
 
@@ -125,12 +264,12 @@ int destinoParqueLaMexicana(){
   fprintf(Parque,"\n");
   } 
   fclose(Parque);
-
+  turisticos();
   return 0;
 }
 
 int destinoUniversum(){
-FILE *Universum=fopen("Universum","w");
+  FILE *Universum=fopen("Universum","w");
   if(Universum==NULL){
     puts("Error al abrir el archivo");
     return 1;
@@ -154,13 +293,13 @@ FILE *Universum=fopen("Universum","w");
   fprintf(Universum,"\n");
   } 
   fclose(Universum);
-
+  turistico();
   return 0;
 }
 
 int destinoPuebla(){
   FILE *Puebla=fopen("Puebla.txt","w");
-if(Puebla==NULL){
+  if(Puebla==NULL){
   puts("Error al abrir el archivo");
 }
   char matriz [10][4]={
@@ -183,13 +322,13 @@ if(Puebla==NULL){
   fprintf(Puebla,"\n");
   } 
   fclose(Puebla);
-
+  nacionales();
   return 0;
 }
 
 int destinoQueretaro(){
   FILE *Queretaro=fopen("Queretaro.txt","w");
-if(Queretaro==NULL){
+  if(Queretaro==NULL){
   puts("Error al abrir el archivo");
 }
   char matriz [10][4]={
@@ -212,7 +351,7 @@ if(Queretaro==NULL){
   fprintf(Queretaro,"\n");
   } 
   fclose(Queretaro);
-
+  nacionales();
   return 0;
 }
 
@@ -242,6 +381,7 @@ int destinoHidalgo(){
   fprintf(Hidalgo,"\n");
   } 
   fclose(Hidalgo);
+  nacionales();
   return 0;
 }
 
@@ -251,12 +391,7 @@ int destinoTepotzotlan(){
     puts("Error al abrir el archivo");
   return 1;
   }
-   char matriz[5][3] = {
-    {'L','L','L'},
-    {'L','L','L'},
-    {'L','L','L'},
-    {'L','L','L'},
-    {'L','L','L'}
+   ccc
 
     };
     
@@ -267,9 +402,8 @@ int destinoTepotzotlan(){
   fprintf(Tepotzotlan,"\n");
   } 
   fclose(Tepotzotlan);
+  pueblosmagicos();
   return 0;
-
-  
 }
 
 int destinoValleDelBravo(){
@@ -293,11 +427,17 @@ int destinoValleDelBravo(){
     }
   fprintf(Valle,"\n");
   } 
-fclose(Valle);
+  fclose(Valle);
+
+  pueblosmagicos();
+  return 0;
+
+}
+
 
   
-return 0;
-}
+
+
   
 int main() {
     char Tipo;
@@ -340,8 +480,18 @@ int main() {
             puts("4.-Universum\n");
             scanf("%i",&op);
             if (op == 1){ 
-              strcpy(destino, "Circuito Historico");
+              strcpy(destino, "Circuito Historico");  
               destinoCircuitoHistorico();
+              fopen("Historico","w");
+              for(int i=0; i<10; i++){
+                for(int j=0; j<6; j++){
+                  printf(Historico,"%c", matriz[i][j]);
+                }
+              printf("\n");
+              } 
+              turisticos();
+              fclose(Historico);
+              
             }else
             if (op == 2){ 
               strcpy(destino, "Tour Gastronomico");
@@ -392,6 +542,7 @@ int main() {
               destinoValleDelBravo();
               
             }
+            pueblosmagicos();
             break;
 
           default:
