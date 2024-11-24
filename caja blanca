@@ -2,117 +2,115 @@ Análisis de Caja Blanca
 Algoritmo:
 
 
-Hacer directorio 'Tickets'
+1. Hacer directorio 'Tickets'
 
-Hacer max_numero=0
-Abrir directorio 'Tickets'
+2. Hacer max_numero=0
+3. Abrir directorio 'Tickets'
 
-Si 'Tickets' no existe  
-    Marcar error
-    regresar max_numero
+4. Si 'Tickets' no existe  
+    4.1 Marcar error
+    4.2 regresar max_numero
 
-Mientras existan archivos en el directorio  
-    Filtrar solo archivos regulares
-    Obtener el numero de archivos con nombre 'Ticket_"numero"'
-    Hacer max_numero con el numero de archivos
+5. Mientras existan archivos en el directorio  
+    5.1 Filtrar solo archivos regulares
+    5.2 Obtener el numero de archivos con nombre 'Ticket_"numero"'
+    5.3 Hacer max_numero con el numero de archivos
 
-Regresar max_numero
-Cerrar 'Tickets' 
-
-
+6. Regresar max_numero
+7. Cerrar 'Tickets' 
 
 
-Hacer archivo 'Historico.txt'
-Si 'Historico.txt' no existe   
-    regresar error
+8. Hacer o abrir archivo 'Historico.txt'
+9. Si 'Historico.txt' no existe   
+    9.1 regresar error
 
-Mostrar matrix dentro del archivo 'Historico.txt'
-Cerrar archivo
-
-
-Hacer archivo 'Gastronomico.txt'
-Si 'Gastronomico.txt' no existe   
-    regresar error
-
-Mostrar matrix dentro del archivo 'Gastronomico.txt'
-Cerrar archivo
+10. Mostrar matrix dentro del archivo 'Historico.txt'
+11. Cerrar archivo
 
 
-Hacer archivo 'Parque.txt'
-Si 'Parque.txt' no existe   
-    regresar error
+12. Hacer o abrir archivo 'Gastronomico.txt'
+13. Si 'Gastronomico.txt' no existe   
+    13.1 regresar error
 
-Mostrar matrix dentro del archivo 'Parque.txt'
-Cerrar archivo
-
-
-Hacer archivo 'Universum.txt'
-Si 'Universum.txt' no existe   
-    regresar error
-
-Mostrar matrix dentro del archivo 'Universum.txt'
-Cerrar archivo
+14. Mostrar matrix dentro del archivo 'Gastronomico.txt'
+15. Cerrar archivo
 
 
-Hacer archivo 'Puebla.txt'
-Si 'Puebla.txt' no existe   
-    regresar error
+16. Hacer o abrir archivo 'Parque.txt'
+17. Si 'Parque.txt' no existe   
+    17.1 regresar error
 
-Mostrar matrix dentro del archivo 'Puebla.txt'
-Cerrar archivo
-
-
-Hacer archivo 'Queretaro.txt'
-Si 'Queretaro.txt' no existe   
-    regresar error
-
-Mostrar matrix dentro del archivo 'Queretaro.txt'
-Cerrar archivo
+18. Mostrar matrix dentro del archivo 'Parque.txt'
+19. Cerrar archivo
 
 
-Hacer archivo 'Hidalgo.txt'
-Si 'Hidalgo.txt' no existe   
-    regresar error
+20. Hacer o abrir archivo 'Universum.txt'
+21. Si 'Universum.txt' no existe   
+    21.1 regresar error
 
-Mostrar matrix dentro del archivo 'Hidalgo.txt'
-Cerrar archivo
-
-
-Hacer archivo 'Tepotzotlan.txt'
-Si 'Tepotzotlan.txt' no existe   
-    regresar error
-
-Mostrar matrix dentro del archivo 'Tepotzotlan.txt'
-Cerrar archivo
+22. Mostrar matrix dentro del archivo 'Universum.txt'
+23. Cerrar archivo
 
 
-Hacer archivo 'Valle.txt'
-Si 'Valle.txt' no existe   
-    regresar error
+24. Hacer o abrir archivo 'Puebla.txt'
+25. Si 'Puebla.txt' no existe   
+    25.1regresar error
 
-Mostrar matrix dentro del archivo 'Valle.txt'
-Cerrar archivo
+26. Mostrar matrix dentro del archivo 'Puebla.txt'
+27. Cerrar archivo
+
+
+28. Hacer o abrir archivo 'Queretaro.txt'
+29. Si 'Queretaro.txt' no existe   
+    29.1 regresar error
+
+30. Mostrar matrix dentro del archivo 'Queretaro.txt'
+31. Cerrar archivo
+
+
+32. Hacer o abrir archivo 'Hidalgo.txt'
+33. Si 'Hidalgo.txt' no existe   
+    33.1 regresar error
+
+34. Mostrar matrix dentro del archivo 'Hidalgo.txt'
+35. Cerrar archivo
+
+
+36. Hacer o abrir archivo 'Tepotzotlan.txt'
+37. Si 'Tepotzotlan.txt' no existe   
+    37.1 regresar error
+
+38. Mostrar matrix dentro del archivo 'Tepotzotlan.txt'
+39. Cerrar archivo
+
+
+40. Hacer o abrir archivo 'Valle.txt'
+41. Si 'Valle.txt' no existe   
+    41.1 regresar error
+
+42. Mostrar matrix dentro del archivo 'Valle.txt'
+43. Cerrar archivo
 
 
 
-Mostrar "Bienvenido a la compañía TravelBus"
-Mostrar "Explora nuestras opciones de viajes y reserva en minutos"
-Mientras continuar
-    Mostrar "...[Registro del usuario]..." 
-    Mostrar "Ingrese su nombre completo: "
-    Dar y almacenar una cadena de caracteres representado por 'nombre'
-    Mostrar "Ingrese su correo electronico: "
-    Dar y almacenar una cadena de caracteres representado por 'correo'
-    Mostrar "Ingrese su número de teléfono: "
-    Dar y almacenar una cadena de caracteres representado por 'telefono'
+44. Mostrar "Bienvenido a la compañía TravelBus"
+45. Mostrar "Explora nuestras opciones de viajes y reserva en minutos"
+46. Mientras continuar
+    46.1 Mostrar "...[Registro del usuario]..." 
+    46.2 Mostrar "Ingrese su nombre completo: "
+    46.3 Dar y almacenar una cadena de caracteres representado por 'nombre'
+    46.4 Mostrar "Ingrese su correo electronico: "
+    46.5 Dar y almacenar una cadena de caracteres representado por 'correo'
+    46.6 Mostrar "Ingrese su número de teléfono: "
+    46.7 Dar y almacenar una cadena de caracteres representado por 'telefono'
     
-    Hacer indefinidamente
-        Mostrar "Estos son nuestros viajes disponibles:"
-        Mostrar "a) Viajes turísticos:  b) Viajes nacionales:  c) Pueblos mágicos:"
-        Dar y almacenar un caracter representado por 'tipo' que elija el tipo viaje
+    46.8 Hacer indefinidamente
+        46.8.1 Mostrar "Estos son nuestros viajes disponibles:"
+        46.8.2  Mostrar "a) Viajes turísticos:  b) Viajes nacionales:  c) Pueblos mágicos:"
+        46.8.3 Dar y almacenar un caracter representado por 'tipo' que elija el tipo viaje
 
-        Si tipo==a
-            Mostrar "¿A qué destino deseas ir?"
+        46.8.3 Si tipo==a
+                Mostrar "¿A qué destino deseas ir?"
             Mostrar "1.- Circuito Histórico  2.- Tour Gastronómico  3.- Parque 'La Mexicana'  4.- Universum"
                 
             Hacer 'destino_valido'=0
@@ -156,7 +154,7 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Historico.txt'
                     
             
-            Si op==2Si op==2
+            Si op==2
 
                 Hacer "Tour Gastronomico"='destino'
                     Hacer indefinidamente
@@ -182,15 +180,14 @@ Mientras continuar
                 
                 Hacer archivo 'Gastronomico.txt'
                 Si 'Gastronomico.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Gastronomico.txt'
+                    Mostrar "Error al abrir el archivo 'Gastronomico.txt'"
                     Regresar error
-"                Mostrar matriz dentro del archivo 'Gastronomico.txt'
+               Mostrar matriz dentro del archivo 'Gastronomico.txt'
             
-            Si op==3
             Si op==3
 
                 Hacer "Parque "La Mexicana""='destino'
-    Hacer indefinidamente
+                    Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
                     Dar y almacenar un valor de tipo entero representado por 'filas'
@@ -216,8 +213,6 @@ Mientras continuar
                     Mostrar "Error al abrir el archivo 'Parque.txt'"
                     Regresar error
                 Mostrar matriz dentro del archivo 'Parque.txt'
-
-            Si op==4
 
             Si op==4
 
@@ -248,27 +243,31 @@ Mientras continuar
                     Mostrar "Error al abrir el archivo 'Universum.txt'"
                     Regresar error
                 Mostrar matriz dentro del archivo 'Universum.txt'
+            
+            En caso contrario  
+                Mostrar "Datos mal ingresados"
+                Continuar
        
-        Si opcion==b
-     Mostrar"¿A qué destino deseas ir?"
-           tipoar "1.- CDMX-Puebla"
-            Mostrar "2.- CDMX-Querétaro"
-            Mostrar "3.- CDMX-Hidalgo"o"
+        46.8.4 Si tipo==b
+            46.8.4.1 Mostrar"¿A qué destino deseas ir?"
+            46.8.4.2 Mostrar "1.- CDMX-Puebla"
+            46.8.4.3 Mostrar "2.- CDMX-Querétaro"
+            46.8.4.4 Mostrar "3.- CDMX-Hidalgo"
 
-            Mostrar "3.- CDMX-Hidalgo"
-            Hacer 'destino_valido'=0
-            Hacer indefinidamente
-                Dar y almacenar un numero de tipo entero representado por 'op'
-                Si 'op' es diferente de 1
-                    Mostrar "Entrada inválida, por favor ingrese un número."
-                En caso contrario
-                    Hacer 'destino_valido'=1
-            Mientras 'destino_valido' sea diferente a 0
+            46.8.4.5 Hacer 'destino_valido'=0
+            46.8.4.6 Hacer indefinidamente
+                46.8.4.6.1 Dar y almacenar un numero de tipo entero representado por 'op'
+                46.8.4.6.2 Si 'op' es diferente de 1
+                    46.8.4.6.2.1 Mostrar "Entrada inválida, por favor ingrese un número."
+                46.8.4.6.3 En caso contrario
+                    46.8.4.6.3.1 Hacer 'destino_valido'=1
+            46.8.4.7 Mientras 'destino_valido' sea diferente a 0
             
             
-            Si op==1 op==1
+            46.8.4.8 Si op==1
 
                 Hacer "CDMX-Puebla"='destino'
+                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
                     Dar y almacenar un valor de tipo entero representado por 'filas'
@@ -296,7 +295,7 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Puebla.txt'
 
             
-            Si op==2
+            46.8.4.9 Si op==2
 
                 Hacer "CDMX-Queretaro"='destino'
                 Hacer indefinidamente
@@ -321,13 +320,13 @@ Mientras continuar
                 Mientras el proceso este activo
                 
                 Hacer archivo 'Queretaro.txt'
-                Si 'Queretaro.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Queretaro.txt'
-                    Regresar error
-"                Mostrar matriz dentro del archivo 'Queretaro.txt'
+               Si 'Queretaro.txt' no existe
+                   Mostrar "Error al abrir el archivo 'Queretaro.txt'"
+                  Regresar error
+                Mostrar matriz dentro del archivo 'Queretaro.txt'
 
             
-            Si op==3
+            46.8.4.10 Si op==3
 
                 Hacer "CDMX-Hidalgo"='destino'
                 Hacer indefinidamente
@@ -353,15 +352,19 @@ Mientras continuar
                 
                 Hacer archivo 'Hidalgo.txt'
                 Si 'Hidalgo.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Hidalgo.txt'
-                    Regresar error
-"                Mostrar matriz dentro del archivo 'Hidalgo.txt'
-                
-        Si opcion==c
-            Mostrar"¿A qué destino deseas ir?"
-           tipoar "1.- CDMX-Tepotzotlán"
-            Mostrar "2.- CDMX-Valle de Bravo"
+                    Mostrar "Error al abrir el archivo 'Hidalgo.txt'"
+                Regresar error
+               Mostrar matriz dentro del archivo 'Hidalgo.txt'
 
+            En caso contrario  
+                Mostrar "Datos mal ingresados"
+                Continuar
+                
+        Si tipo==c
+o del archivo 'Hidalgo.txt'
+           tipot             Mostrar== c
+            Mostrtrar"¿A qué destino deseas ir?"
+           tipoar "1.- CDMX-Tepotzotlán"
             Mostrar "2.- CDMX-Valle de Bravo"
             Hacer 'destino_valido'=0
             Hacer indefinidamente
@@ -373,8 +376,7 @@ Mientras continuar
             Mientras 'destino_valido' sea diferente a 0
             
             
-            Si op==1 op==1
-
+            Si op==1
                 Hacer "CDMX-Tepotzotlan"='destino'
                                 Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-5)"
@@ -393,14 +395,14 @@ Mientras continuar
                         En caso contrario
                             Mostrar "El asiento ya está ocupado. Elija otro."       
                     En caso contrario
-                        Mostrar "Asiento inválido. Intente de nuevo. "
+                        Mostrar "Asiento inválido. Intente de nuevo."
                 Mientras el proceso este activo
                 
                 Hacer archivo 'Tepozotlan.txt'
-                Si 'Tepozotlan.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Tepozotlan.txt'
+               Si 'Tepozotlan.txt' no existe
+                    Mostrar "Error al abrir el archivo 'Tepozotlan.txt'"
                     Regresar error
-"                Mostrar matriz dentro del archivo 'Tepozotlan.txt'
+               Mostrar matriz dentro del archivo 'Tepozotlan.txt'
                 
             
             Si op==2
@@ -423,22 +425,25 @@ Mientras continuar
                             Hacer filaSeleccionada=fila+1
                             Hacer columnaSeleccionada=columna+1
                         En caso contrario
-                            Mostrar "El asiento ya está ocupado. Elija otro."       
+                            Mostrar "El asiento ya está ocupado. Elija otro. "      
                     En caso contrario
-                        Mostrar "Asiento inválido. Intente de nuevo. "
+                        Mostrar "Asiento inválido. Intente de nuevo."
                 Mientras el proceso este activo
                 
-                Hacer archivo 'Valle.txt'
-                Si 'Valle.txt' no existe
-                    Mostrar "Error al abrir el archivo 'Valle.txt'
+               Hacer archivo 'Valle.txt'
+               Si 'Valle.txt' no existe
+                    Mostrar "Error al abrir el archivo 'Valle.txt'"
                     Regresar error
-"                Mostrar matriz dentro del archivo 'Valle.txt'
+                Mostrar matriz dentro del archivo 'Valle.txt'
+
+            En caso contrario
+                Mostrar "Datos mal ingresados"
+                Continuar
 
         En caso contrario 
             Mostrar "Dato incorrecto, ¡Vuelve a intentarlo!"
-    Mientras 'selecciario 
-            Mostrar "on valida' sea diferente a 0
-"
+    Mientras 'seleccion_valida' sea diferente de 0
+
     Si destino>0
         Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
 
