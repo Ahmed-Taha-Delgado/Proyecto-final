@@ -111,14 +111,6 @@ char matrizValle[5][3] = {
     {'L', 'L', 'L'}
 };
 
-
-
-
-
-
-
-
-
 int cargarMatrizDesdeArchivo(char *nombreArchivo, char matriz[][6], int filas, int columnas) {
     FILE *archivo = fopen(nombreArchivo, "r");
     if (archivo == NULL) {
