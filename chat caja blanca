@@ -359,35 +359,34 @@
                 46.8.6.9.2 Continuar.
         46.8.7 En caso contrario:
             46.8.7.1 Mostrar "Dato incorrecto, ¡Vuelve a intentarlo!".
-        46.8.8 Mientras 'seleccion_valida' sea diferente de 0.
-    
-    46.9 Si destino > 0:
-                        46.9.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'.
-                        46.9.2 Hacer archivo 'ticket'.
-                        46.9.3 Si 'ticket' no existe:
-                            46.9.3.1 Mostrar "Error al generar el archivo del ticket".
-                            46.9.3.2 Regresar error.
-                        46.9.4 Mostrar "=======================".
-                        46.9.5 Mostrar "=   TICKET DE VIAJE   =".
-                        46.9.6 Mostrar "=======================".
-                        46.9.7 Mostrar "Nombre: 'nombre'".
-                        46.9.8 Mostrar "Correo: 'correo'".
-                        46.9.9 Mostrar "Teléfono: 'telefono'".
-                        46.9.10 Mostrar "Destino: 'destino'".
-                        46.9.11 Mostrar "Asiento: Fila 'fila' Columna 'columna'".
-                        46.9.12 Mostrar "Número de Ticket: 'ticket_numero'".
-                        46.9.13 Mostrar "=======================".
-                    46.10 Hacer indefinidamente:
-                        46.10.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): ".
-                        46.10.2 Dar y almacenar un valor de tipo entero representado por 'reservacion'.
-                        46.10.3 Si reservacion == 0:
-                            46.10.3.1 Hacer continuar = 0.
-                        46.10.4 Si reservacion == 1:
-                            46.10.4.1 Hacer continuar = 1.
-                        46.10.5 En caso contrario:
-                            46.10.5.1 Mostrar "Opción inválida, Intente de nuevo".
-                            46.10.5.2 Hacer reservacion = -1.
-                    46.11 Mientras reservacion == -1.
+    46.9 Mientras 'seleccion_valida' sea diferente de 0.
+    46.10 Si destino > 0:
+        46.10.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'.
+        46.10.2 Hacer archivo 'ticket'.
+        46.10.3 Si 'ticket' no existe:
+            46.10.3.1 Mostrar "Error al generar el archivo del ticket".
+            46.10.3.2 Regresar error.
+        46.10.4 Mostrar "=======================".
+        46.10.5 Mostrar "=   TICKET DE VIAJE   =".
+        46.10.6 Mostrar "=======================".
+        46.10.7 Mostrar "Nombre: 'nombre'".
+        46.10.8 Mostrar "Correo: 'correo'".
+        46.10.9 Mostrar "Teléfono: 'telefono'".
+        46.10.10 Mostrar "Destino: 'destino'".
+        46.10.11 Mostrar "Asiento: Fila 'fila' Columna 'columna'".
+        46.10.12 Mostrar "Número de Ticket: 'ticket_numero'".
+        46.10.13 Mostrar "=======================".
+    46.11 Hacer indefinidamente:
+        46.11.1 Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): ".
+        46.11.2 Dar y almacenar un valor de tipo entero representado por 'reservacion'.
+        46.11.3 Si reservacion == 0:
+            46.11.3.1 Hacer continuar = 0.
+        46.11.4 Si reservacion == 1:
+            46.11.4.1 Hacer continuar = 1.
+        46.11.5 En caso contrario:
+            46.11.5.1 Mostrar "Opción inválida, Intente de nuevo".
+            46.11.5.2 Hacer reservacion = -1.
+    46.12 Mientras reservacion == -1.
 47 Mostrar "Gracias por usar TravelBus. ¡Buen viaje!".
 48 Para 'ticket_numero' > 1:
     48.1 Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'.

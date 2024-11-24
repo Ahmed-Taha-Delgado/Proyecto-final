@@ -2,17 +2,18 @@ Datos de entrada;
 Una cadena de caracteres que diga el nombre completo del usuario
 Una cadena de caracteres que diga el correo electronico
 Una cadena de digitos que diga el telefono  
-Un caracter que elija la opcion de tipo de viaje: turístico (a), nacional (b), o pueblos mágicos (c).
+Un caracter representado por 'tipo' que elija la tipo de tipo de viaje: turístico (a), nacional (b), o pueblos mágicos (c).
+Un valor de tipo entero representando por 'op' que elija la opcion d 
 Dos valores de tipo entero que representen la fila y la columna del asiento a reservar
 
 Datos de salida:
+Una cadena de caracteres que contenga los datos de la reserva: nombre completo, correo electronico, telefono, destino y asiento seleccionado
 Un archivo que contenga los datos de la reserva: nombre completo, correo electronico, telefono, destino y asiento seleccionado
 Una cadena de caracteres que represente un error al ingresar los datos
 
 Restricciones:
-El nombre, correo y telefono no pueden estar vacios
 La opcion del tipo de viaje tiene que ser a, b o c
-Los digitos de las filas y columnas no pueden ser mayores o menores a las filas y columnas del camion
+Los digitos de las filas y columnas deben estar dentro del rango de cada camion
 Los viajes turisticos solo pueden tener opciones del 1 al 4
 Los viajes nacionales solo pueden tener opciones del 1 al 3
 Los viajes nacionales solo pueden tener opciones del 1 al 2

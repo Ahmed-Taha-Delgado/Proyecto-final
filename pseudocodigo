@@ -1,6 +1,6 @@
 INICIO
     HACER DIRECTORIO "Tickets"
-    HACER MAX_NUMERO <- 0
+    HACER MAX_NUMERO  = 0
     ABRIR DIRECTORIO "Tickets"
     SI "Tickets" NO EXISTE ENTONCES
         MARCAR ERROR
@@ -9,7 +9,7 @@ INICIO
     MIENTRAS EXISTAN ARCHIVOS EN EL DIRECTORIO HACER
         FILTRAR SOLO ARCHIVOS REGULARES
         OBTENER EL NUMERO DE ARCHIVOS CON NOMBRE "Ticket_<numero>"
-        HACER MAX_NUMERO <- NUMERO OBTENIDO
+        HACER MAX_NUMERO = NUMERO OBTENIDO
     FIN MIENTRAS
     REGRESAR MAX_NUMERO
     CERRAR DIRECTORIO "Tickets"
@@ -58,7 +58,7 @@ INICIO
     HACER O ABRIR ARCHIVO "Tepotzotlan.txt"
     SI "Tepotzotlan.txt" NO EXISTE ENTONCES
         REGRESAR ERROR
-    FIN_SI
+    FIN SI
     ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Tepotzotlan.txt"
     CERRAR ARCHIVO
     HACER O ABRIR ARCHIVO "Valle.txt"
@@ -86,31 +86,31 @@ INICIO
         SI 'tipo' == 'a' ENTONCES
             ESCRIBIR "¿A QUÉ DESTINO DESEAS IR?"
             ESCRIBIR "1.- CIRCUITO HISTÓRICO  2.- TOUR GASTRONÓMICO  3.- PARQUE 'LA MEXICANA'  4.- UNIVERSUM"
-            HACER destino_valido <- 0
+            HACER destino_valido = 0
             HACER INDEFINIDAMENTE
                 LEER 'op'
                 SI 'op' ES DIFERENTE DE 1 Y 'op' ES DIFERENTE DE 2 Y 'op' ES DIFERENTE DE 3 Y 'op' ES DIFERENTE DE 4 ENTONCES
                     ESCRIBIR "ENTRADA INVÁLIDA, POR FAVOR INGRESE UN NÚMERO."
                 EN CASO CONTRARIO
-                    HACER destino_valido <- 1
+                    HACER destino_valido = 1
                 FIN SI
             MIENTRAS destino_valido == 0
             SI 'op' == 1 ENTONCES
-                HACER "CIRCUITO HISTÓRICO" <- destino
+                HACER "CIRCUITO HISTÓRICO" = destino
                 HACER INDEFINIDAMENTE
                     ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                     ESCRIBIR "FILA (1-10)"
                     LEER 'fila'
                     ESCRIBIR "COLUMNA (1-6)"
                     LEER 'columna'
-                    HACER 'fila' <- 'fila' - 1
-                    HACER 'columna' <- 'columna' - 1
+                    HACER 'fila' = 'fila' - 1
+                    HACER 'columna' = 'columna' - 1
                     SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                         SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                            HACER POSICIÓN 'fila', 'columna' <- 'O'
+                            HACER POSICIÓN 'fila', 'columna' = 'O'
                             ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                            HACER filaSeleccionada <- fila + 1
-                            HACER columnaSeleccionada <- columna + 1
+                            HACER filaSeleccionada = fila + 1
+                            HACER columnaSeleccionada = columna + 1
                         EN CASO CONTRARIO
                             ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
                         FIN SI
@@ -122,13 +122,13 @@ INICIO
                     ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
                     LEER 'reservacion'
                     SI reservacion == 0 ENTONCES
-                        HACER continuar <- 0
+                        HACER continuar = 0
                     EN CASO CONTRARIO
                         SI reservacion == 1 ENTONCES
-                            HACER continuar <- 1
+                            HACER continuar = 1
                         EN CASO CONTRARIO
                             ESCRIBIR "OPCIÓN INVÁLIDA. INTENTE DE NUEVO."
-                            HACER reservacion <- -1
+                            HACER reservacion = -1
                         FIN SI
                     FIN SI
                 MIENTRAS reservacion == -1
@@ -141,21 +141,21 @@ INICIO
                 ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
             FIN SI
             SI 'op' == 2 ENTONCES
-                HACER "TOUR GASTRONÓMICO" <- destino
+                HACER "TOUR GASTRONÓMICO" = destino
                 HACER INDEFINIDAMENTE
                     ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                     ESCRIBIR "FILA (1-10)"
                     LEER 'fila'
                     ESCRIBIR "COLUMNA (1-6)"
                     LEER 'columna'
-                    HACER 'fila' <- 'fila' - 1
-                    HACER 'columna' <- 'columna' - 1
+                    HACER 'fila' = 'fila' - 1
+                    HACER 'columna' = 'columna' - 1
                     SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                         SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                            HACER POSICIÓN 'fila', 'columna' <- 'O'
+                            HACER POSICIÓN 'fila', 'columna' = 'O'
                             ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                            HACER filaSeleccionada <- fila + 1
-                            HACER columnaSeleccionada <- columna + 1
+                            HACER filaSeleccionada = fila + 1
+                            HACER columnaSeleccionada = columna + 1
                         EN CASO CONTRARIO
                             ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
                         FIN SI
@@ -167,87 +167,42 @@ INICIO
                     ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
                     LEER 'reservacion'
                     SI reservacion == 0 ENTONCES
-                        HACER continuar <- 0
+                        HACER continuar = 0
                     EN CASO CONTRARIO
                         SI reservacion == 1 ENTONCES
-                            HACER continuar <- 1
+                            HACER continuar = 1
                         EN CASO CONTRARIO
                             ESCRIBIR "OPCIÓN INVÁLIDA. INTENTE DE NUEVOS"
-                            HACER reservacion <- -1
-                        FIN_SI
-                    FIN_SI
+                            HACER reservacion = -1
+                        FIN SI
+                    FIN SI
                 MIENTRAS reservacion == -1
                 HACER ARCHIVO "Gastronomico.txt"
                 SI "Gastronomico.txt" NO EXISTE ENTONCES
                     ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Gastronomico.txt'."
                     REGRESAR ERROR
-                FIN_SI
+                FIN SI
                 ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Gastronomico.txt"
                 ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-            FIN_SI
-        FIN_SI
-    FIN_HACER
+            FIN SI
+        FIN SI
+    FIN HACER
         SI 'op' == 3 ENTONCES
-        HACER "PARQUE 'LA MEXICANA'" <- destino
+        HACER "PARQUE 'LA MEXICANA'" = destino
         HACER INDEFINIDAMENTE
             ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
             ESCRIBIR "FILA (1-10)"
             LEER 'fila'
             ESCRIBIR "COLUMNA (1-6)"
             LEER 'columna'
-            HACER 'fila' <- 'fila' - 1
-            HACER 'columna' <- 'columna' - 1
+            HACER 'fila' = 'fila' - 1
+            HACER 'columna' = 'columna' - 1
             SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                 SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                    HACER POSICIÓN 'fila', 'columna' <- 'O'
+                    HACER POSICIÓN 'fila', 'columna' = 'O'
                     ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                    HACER filaSeleccionada <- fila + 1
-                    HACER columnaSeleccionada <- columna + 1
-                EN CASO CONTRARIO
-                    ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                FIN_SI
-            EN CASO CONTRARIO
-                ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-            FIN_SI
-        MIENTRAS PROCESO ACTIVO
-        HACER INDEFINIDAMENTE
-            ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
-            LEER 'reservacion'
-            SI reservacion == 0 ENTONCES
-                HACER continuar <- 0
-            EN CASO CONTRARIO
-                SI reservacion == 1 ENTONCES
-                    HACER continuar <- 1
-                EN CASO CONTRARIO
-                    ESCRIBIR "OPCIÓN INVÁLIDA. INTENTE DE NUEVO."
-                    HACER reservacion <- -1
-                FIN_SI
-            FIN_SI
-        MIENTRAS reservacion == -1
-        HACER ARCHIVO "Parque.txt"
-        SI "Parque.txt" NO EXISTE ENTONCES
-            ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Parque.txt'."
-            REGRESAR ERROR
-        FIN_SI
-        ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Parque.txt"
-        ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-    FIN_SI
-    SI 'op' == 4 ENTONCES
-        HACER "UNIVERSUM" <- destino
-        HACER INDEFINIDAMENTE
-            ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
-            ESCRIBIR "FILA (1-10)"
-            LEER 'fila'
-            ESCRIBIR "COLUMNA (1-6)"
-            LEER 'columna'
-            HACER 'fila' <- 'fila' - 1
-            HACER 'columna' <- 'columna' - 1
-            SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
-                SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                    HACER POSICIÓN 'fila', 'columna' <- 'O'
-                    ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                    HACER filaSeleccionada <- fila + 1
-                    HACER columnaSeleccionada <- columna + 1
+                    HACER filaSeleccionada = fila + 1
+                    HACER columnaSeleccionada = columna + 1
                 EN CASO CONTRARIO
                     ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
                 FIN SI
@@ -259,231 +214,276 @@ INICIO
             ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
             LEER 'reservacion'
             SI reservacion == 0 ENTONCES
-                HACER continuar <- 0
+                HACER continuar = 0
             EN CASO CONTRARIO
                 SI reservacion == 1 ENTONCES
-                    HACER continuar <- 1
+                    HACER continuar = 1
                 EN CASO CONTRARIO
                     ESCRIBIR "OPCIÓN INVÁLIDA. INTENTE DE NUEVO."
-                    HACER reservacion <- -1
-                FIN_SI
-            FIN_SI
+                    HACER reservacion = -1
+                FIN SI
+            FIN SI
+        MIENTRAS reservacion == -1
+        HACER ARCHIVO "Parque.txt"
+        SI "Parque.txt" NO EXISTE ENTONCES
+            ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Parque.txt'."
+            REGRESAR ERROR
+        FIN SI
+        ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Parque.txt"
+        ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
+    FIN SI
+    SI 'op' == 4 ENTONCES
+        HACER "UNIVERSUM" = destino
+        HACER INDEFINIDAMENTE
+            ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
+            ESCRIBIR "FILA (1-10)"
+            LEER 'fila'
+            ESCRIBIR "COLUMNA (1-6)"
+            LEER 'columna'
+            HACER 'fila' = 'fila' - 1
+            HACER 'columna' = 'columna' - 1
+            SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
+                SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
+                    HACER POSICIÓN 'fila', 'columna' = 'O'
+                    ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
+                    HACER filaSeleccionada = fila + 1
+                    HACER columnaSeleccionada = columna + 1
+                EN CASO CONTRARIO
+                    ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
+                FIN SI
+            EN CASO CONTRARIO
+                ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
+            FIN SI
+        MIENTRAS PROCESO ACTIVO
+        HACER INDEFINIDAMENTE
+            ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
+            LEER 'reservacion'
+            SI reservacion == 0 ENTONCES
+                HACER continuar = 0
+            EN CASO CONTRARIO
+                SI reservacion == 1 ENTONCES
+                    HACER continuar = 1
+                EN CASO CONTRARIO
+                    ESCRIBIR "OPCIÓN INVÁLIDA. INTENTE DE NUEVO."
+                    HACER reservacion = -1
+                FIN SI
+            FIN SI
         MIENTRAS reservacion == -1
         HACER ARCHIVO "Universum.txt"
         SI "Universum.txt" NO EXISTE ENTONCES
             ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Universum.txt'."
             REGRESAR ERROR
-        FIN_SI
+        FIN SI
         ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Universum.txt"
         ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
     EN CASO CONTRARIO
         ESCRIBIR "DATOS MAL INGRESADOS"
         CONTINUAR
-    FIN_SI
+    FIN SI
     SI 'tipo' == 'b' ENTONCES
         ESCRIBIR "¿A QUÉ DESTINO DESEAS IR?"
         ESCRIBIR "1.- CDMX-PUEBLA"
         ESCRIBIR "2.- CDMX-QUERÉTARO"
         ESCRIBIR "3.- CDMX-HIDALGO"
-        HACER destino_valido <- 0 
+        HACER destino_valido = 0 
         HACER INDEFINIDAMENTE
             LEER 'op'
             SI 'op' NO ESTÁ EN EL RANGO [1-3] ENTONCES
                 ESCRIBIR "ENTRADA INVÁLIDA, POR FAVOR INGRESE UN NÚMERO."
             EN CASO CONTRARIO
-                HACER destino_valido <- 1
-            FIN_SI
+                HACER destino_valido = 1
+            FIN SI
         MIENTRAS destino_valido == 0
         SI 'op' == 1 ENTONCES
-            HACER "CDMX-PUEBLA" <- destino
+            HACER "CDMX-PUEBLA" = destino
             HACER INDEFINIDAMENTE
                 ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                 ESCRIBIR"FILA (1-10)"
                 LEER'fila'
                 ESCRIBIR"COLUMNA (1-4)"
                 LEER'columna'
-                HACER 'fila' <- 'fila' - 1
-                HACER 'columna' <- 'columna' - 1
+                HACER 'fila' = 'fila' - 1
+                HACER 'columna' = 'columna' - 1
                 SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                     SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                        HACER POSICIÓN 'fila', 'columna' <- 'O'
+                        HACER POSICIÓN 'fila', 'columna' = 'O'
                         ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                        HACER filaSeleccionada <- fila + 1
-                        HACER columnaSeleccionada <- columna + 1
+                        HACER filaSeleccionada = fila + 1
+                        HACER columnaSeleccionada = columna + 1
                     EN CASO CONTRARIO
                         ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                    FIN_SI
+                    FIN SI
                 EN CASO CONTRARIO
                     ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-                FIN_SI
+                FIN SI
             MIENTRAS PROCESO ACTIVO
             HACER INDEFINIDAMENTE
                 ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
                 LEER UN ENTERO REPRESENTADO POR 'reservacion'
                 SI reservacion == 0 ENTONCES
-                    HACER continuar <- 0
+                    HACER continuar = 0
                 EN CASO CONTRARIO
                     SI reservacion == 1 ENTONCES
-                        HACER continuar <- 1
+                        HACER continuar = 1
                     EN CASO CONTRARIO
                         ESCRIBIR"OPCIÓN INVÁLIDA. INTENTE DE NUEVO."
-                        HACER reservacion <- -1
-                    FIN_SI
-                FIN_SI
+                        HACER reservacion = -1
+                    FIN SI
+                FIN SI
             MIENTRAS reservacion == -1
             HACER ARCHIVO "Puebla.txt"
             SI "Puebla.txt" NO EXISTE ENTONCES
                 ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Puebla.txt'."
                 REGRESAR ERROR
-            FIN_SI
+            FIN SI
             ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Puebla.txt"
             ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-        FIN_SI
+        FIN SI
         SI 'op' == 2 ENTONCES
-            HACER "CDMX-QUERÉTARO" <- destino
+            HACER "CDMX-QUERÉTARO" = destino
             HACER INDEFINIDAMENTE
                 ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                 ESCRIBIR "FILA (1-10)"
                 LEER 'fila'
                 ESCRIBIR "COLUMNA (1-4)"
                 LEER'columna'
-                HACER 'fila' <- 'fila' - 1
-                HACER 'columna' <- 'columna' - 1
+                HACER 'fila' = 'fila' - 1
+                HACER 'columna' = 'columna' - 1
                 SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                     SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                        HACER POSICIÓN 'fila', 'columna' <- 'O'
+                        HACER POSICIÓN 'fila', 'columna' = 'O'
                         ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                        HACER filaSeleccionada <- fila + 1
-                        HACER columnaSeleccionada <- columna + 1
+                        HACER filaSeleccionada = fila + 1
+                        HACER columnaSeleccionada = columna + 1
                     EN CASO CONTRARIO
                         ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                    FIN_SI
+                    FIN SI
                 EN CASO CONTRARIO
                     ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-                FIN_SI
+                FIN SI
             MIENTRAS PROCESO ACTIVO
             HACER ARCHIVO "Queretaro.txt"
             SI "Queretaro.txt" NO EXISTE ENTONCES
                 ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Queretaro.txt'."
                 REGRESAR ERROR
-            FIN_SI
+            FIN SI
             ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Queretaro.txt"
             ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-        FIN_SI
+        FIN SI
         SI 'op' == 3 ENTONCES
-            HACER "CDMX-HIDALGO" <- destino
+            HACER "CDMX-HIDALGO" = destino
             HACER INDEFINIDAMENTE
                 ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                 ESCRIBIR "FILA (1-10)"
                 LEER 'fila'
                 ESCRIBIR "COLUMNA (1-4)"
                 LEER 'columna'
-                HACER 'fila' <- 'fila' - 1
-                HACER 'columna' <- 'columna' - 1
+                HACER 'fila' = 'fila' - 1
+                HACER 'columna' = 'columna' - 1
                 SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                     SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                        HACER POSICIÓN 'fila', 'columna' <- 'O'
+                        HACER POSICIÓN 'fila', 'columna' = 'O'
                         ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                        HACER filaSeleccionada <- fila + 1
-                        HACER columnaSeleccionada <- columna + 1
+                        HACER filaSeleccionada = fila + 1
+                        HACER columnaSeleccionada = columna + 1
                     EN CASO CONTRARIO
                         ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                    FIN_SI
+                    FIN SI
                 EN CASO CONTRARIO
                     ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-                FIN_SI
+                FIN SI
             MIENTRAS PROCESO ACTIVO
             HACER ARCHIVO "Hidalgo.txt"
             SI "Hidalgo.txt" NO EXISTE ENTONCES
                 ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Hidalgo.txt'."
                 REGRESAR ERROR
-            FIN_SI
+            FIN SI
             ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Hidalgo.txt"
             ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-        FIN_SI
-    FIN_SI
+        FIN SI
+    FIN SI
     SI 'tipo' == 'c' ENTONCES
         ESCRIBIR "¿A QUÉ DESTINO DESEAS IR?"
         ESCRIBIR "1.- CDMX-TEPOTZOTLÁN"
         ESCRIBIR "2.- CDMX-VALLE DE BRAVO"
-        HACER destino_valido <- 0
+        HACER destino_valido = 0
         HACER INDEFINIDAMENTE
             LEER 'op'
             SI 'op' NO ESTÁ EN EL RANGO [1-2] ENTONCES
                 ESCRIBIR "ENTRADA INVÁLIDA, POR FAVOR INGRESE UN NÚMERO."
             EN CASO CONTRARIO
-                HACER destino_valido <- 1
-            FIN_SI
+                HACER destino_valido = 1
+            FIN SI
         MIENTRAS destino_valido == 0
         SI 'op' == 1 ENTONCES
-            HACER "CDMX-TEPOTZOTLÁN" <- destino
+            HACER "CDMX-TEPOTZOTLÁN" = destino
             HACER INDEFINIDAMENTE
                 ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                 ESCRIBIR "FILA (1-5)"
                 LEER 'fila'
                 ESCRIBIR "COLUMNA (1-3)"
                 LEER 'columna'
-                HACER 'fila' <- 'fila' - 1
-                HACER 'columna' <- 'columna' - 1
+                HACER 'fila' = 'fila' - 1
+                HACER 'columna' = 'columna' - 1
                 SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                     SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                        HACER POSICIÓN 'fila', 'columna' <- 'O'
+                        HACER POSICIÓN 'fila', 'columna' = 'O'
                         ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                        HACER filaSeleccionada <- fila + 1
-                        HACER columnaSeleccionada <- columna + 1
+                        HACER filaSeleccionada = fila + 1
+                        HACER columnaSeleccionada = columna + 1
                     EN CASO CONTRARIO
                         ESCRIBIR "EL ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                    FIN_SI
+                    FIN SI
                 EN CASO CONTRARIO
                     ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-                FIN_SI
+                FIN SI
             MIENTRAS PROCESO ACTIVO
             HACER ARCHIVO "Tepotzotlan.txt"
             SI "Tepotzotlan.txt" NO EXISTE ENTONCES
                 ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Tepotzotlan.txt'."
                 REGRESAR ERROR
-            FIN_SI
+            FIN SI
             ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Tepotzotlan.txt"
             ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-        FIN_SI
+        FIN SI
         SI 'op' == 2 ENTONCES
-            HACER "CDMX-VALLE DE BRAVO" <- destino
+            HACER "CDMX-VALLE DE BRAVO" = destino
             HACER INDEFINIDAMENTE
                 ESCRIBIR "SELECCIONE UN ASIENTO (FILA Y COLUMNA)"
                 ESCRIBIR  "FILA (1-5)"
                 LEER POR 'fila'
                 ESCRIBIR "COLUMNA (1-3)"
                 LEER UN ENTERO REPRESENTADO POR 'columna'
-                HACER 'fila' <- 'fila' - 1
-                HACER 'columna' <- 'columna' - 1
+                HACER 'fila' = 'fila' - 1
+                HACER 'columna' = 'columna' - 1
                 SI fila >= 0 Y fila < filas Y columna >= 0 Y columna < columnas ENTONCES
                     SI POSICIÓN 'fila', 'columna' == 'L' ENTONCES
-                        HACER POSICIÓN 'fila', 'columna' <- 'O'
+                        HACER POSICIÓN 'fila', 'columna' = 'O'
                         ESCRIBIR "ASIENTO RESERVADO CORRECTAMENTE"
-                        HACER filaSeleccionada <- fila + 1
-                        HACER columnaSeleccionada <- columna + 1
+                        HACER filaSeleccionada = fila + 1
+                        HACER columnaSeleccionada = columna + 1
                     EN CASO CONTRARIO
                         ESCRIBIR "ASIENTO YA ESTÁ OCUPADO. ELIJA OTRO."
-                    FIN_SI
+                    FIN SI
                 EN CASO CONTRARIO
                     ESCRIBIR "ASIENTO INVÁLIDO. INTENTE DE NUEVO."
-                FIN_SI
+                FIN SI
             MIENTRAS PROCESO ACTIVO
             HACER ARCHIVO "Valle.txt"
             SI "Valle.txt" NO EXISTE ENTONCES
                 ESCRIBIR "ERROR AL ABRIR EL ARCHIVO 'Valle.txt'."
                 REGRESAR ERROR
-            FIN_SI
+            FIN SI
             ESCRIBIR MATRIZ DENTRO DEL ARCHIVO "Valle.txt"
             ESCRIBIR "GRACIAS POR USAR TRAVELBUS. ¡BUEN VIAJE!"
-        FIN_SI
+        FIN SI
         EN CASO CONTRARIO
             ESCRIBIR "DATOS MAL INGRESADOS"
             CONTINUAR
-        FIN_SI
+        FIN SI
     EN CASO CONTRARIO
         ESCRIBIR "DATO INCORRECTO, ¡VUELVE A INTENTARLO!"
-    FIN_SI
+    FIN SI
     MIENTRAS seleccion_valida SEA DIFERENTE DE 0
     SI destino > 0 ENTONCES
         NOMBRAR ARCHIVO "Tickets/Ticket_<numero_de_ticket>.txt"
@@ -506,14 +506,14 @@ INICIO
             ESCRIBIR "¿DESEA HACER OTRA RESERVACIÓN? (1: SÍ, 0: NO): "
             LEER 'reservacion'
             SI reservacion == 0 ENTONCES
-                HACER continuar <- 0
+                HACER continuar = 0
             FIN SI
             SI reservacion == 1 ENTONCES
-                HACER continuar <- 1
+                HACER continuar = 1
             FIN SI
             EN CASO CONTRARIO
                 ESCRIBIR "OPCIÓN INVÁLIDA, INTENTE DE NUEVO"
-                HACER reservacion <- -1
+                HACER reservacion = -1
             FIN SI
         MIENTRAS reservacion == -1
     FIN SI
@@ -531,7 +531,7 @@ INICIO
         FIN MIENTRAS
         CERRAR ARCHIVO
     FIN PARA
-
+FIN
 
 
 
