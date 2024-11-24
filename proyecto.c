@@ -229,8 +229,8 @@ int main() {
     char tipo;
     int filaSeleccionada, columnaSeleccionada;
     char texto[200];
-    int reservacion;
-
+    int reservacion=-1;
+    
     mkdir("Tickets", 0777);
 
     
@@ -307,7 +307,7 @@ int main() {
                 seleccion_valida = 1;
                 break;
 
-            case 'b':
+                       case 'b':
                 puts("¿A qué destino deseas ir?");
                 puts("1.- CDMX-Puebla");
                 puts("2.- CDMX-Querétaro");
@@ -372,51 +372,52 @@ int main() {
                 printf("Dato incorrecto, ¡Vuelve a intentarlo!\n");
                 break;
             }
-        } while (!seleccion_valida);
+            } while (!seleccion_valida);
 
-        if (strlen(destino) > 0) {
-            generarTicket(nombre, correo, telefono, destino, filaSeleccionada, columnaSeleccionada, ticket_numero);
-            ticket_numero++;
-        }
+                if (strlen(destino) > 0) {
+                    generarTicket(nombre, correo, telefono, destino, filaSeleccionada, columnaSeleccionada, ticket_numero);
+                    ticket_numero++;
+                }
+                do {
+                    printf("¿Desea hacer otra reservación? (1: Sí, 0: No): ");
+                    if (scanf("%d", &reservacion) != 1) { 
+                    printf("Entrada inválida. Intente de nuevo.\n");
+                    while (getchar() != '\n'); 
+                    reservacion = -1; 
+                    continue;
+                }
+                    switch (reservacion) {
+                    case 0:
+                    continuar = 0; 
+                    break;
+                    case 1:
+                    continuar = 1; 
+                    break;
+                    default:
+                    printf("Opción inválida. Intente de nuevo.\n");
+                    reservacion = -1;
+                    break;
+                    }
+                } while (reservacion == -1);
+                }
 
-        printf("¿Desea hacer otra reservación? (1: Sí, 0: No): ");
-        scanf("%d", &reservacion);
-        switch (reservacion)
-        {
-        case 0:
-            
-            break;
-        
-        case 1:
-
-            break;
-        
-        default:
-            puts("Opción inválida");
-            
-            break;
-        }
-        
-        getchar();
-    }
-
-    printf("Gracias por usar TravelBus. ¡Buen viaje!\n");
+                    printf("Gracias por usar TravelBus. ¡Buen viaje!\n");
     
-    for (int i = 1; i < ticket_numero; i++) {
-        char nombre_archivo[150]; 
-        sprintf(nombre_archivo, "Tickets/Ticket_%d.txt", i); 
-        FILE *archivo_ticket = fopen(nombre_archivo, "r"); 
+                    for (int i = 1; i < ticket_numero; i++) {
+                        char nombre_archivo[150]; 
+                        sprintf(nombre_archivo, "Tickets/Ticket_%d.txt", i); 
+                        FILE *archivo_ticket = fopen(nombre_archivo, "r"); 
         
-        if (archivo_ticket == NULL) { 
-            printf("Error al abrir el archivo del ticket.\n"); 
-            continue; 
-        } 
-        printf("Contenido del Ticket %d:\n", i);
-        while (fgets(texto, sizeof(texto), archivo_ticket) != NULL) { 
-            printf("%s", texto); 
-        }
-        printf("\n");
-        fclose(archivo_ticket);
-    }
-    return 0;
+                    if (archivo_ticket == NULL) { 
+                        printf("Error al abrir el archivo del ticket.\n"); 
+                        continue; 
+                } 
+                    printf("Contenido del Ticket %d:\n", i);
+                    while (fgets(texto, sizeof(texto), archivo_ticket) != NULL) { 
+                    printf("%s", texto); 
+                }
+                    printf("\n");
+                    fclose(archivo_ticket);
+                }
+                    return 0;
 }

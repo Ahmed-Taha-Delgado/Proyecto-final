@@ -29,7 +29,10 @@ Mientras continuar
                     Hacer 'destino_valido'=1
             Mientras 'destino_valido' sea diferente a 0
                 
-            Si op==1    
+            Si op==1   
+
+                Hacer "Circuito Historico"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -58,6 +61,9 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Historico.txt'
                     
             Si op==2
+
+                Hacer "Tour Gastronomico"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -86,6 +92,9 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Gastronomico.txt'
             
             Si op==3
+
+                Hacer "Parque "La Mexicana""='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -114,6 +123,9 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Parque.txt'
 
             Si op==4
+
+                Hacer "Universum"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -157,6 +169,9 @@ Mientras continuar
             Mientras 'destino_valido' sea diferente a 0
             
             Si op==1
+
+                Hacer "CDMX-Puebla"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -185,6 +200,9 @@ Mientras continuar
                 Mostrar matriz dentro del archivo 'Puebla.txt'
 
             Si op==2
+
+                Hacer "CDMX-Queretaro"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -213,6 +231,9 @@ Mientras continuar
 "                Mostrar matriz dentro del archivo 'Queretaro.txt'
 
             Si op==3
+
+                Hacer "CDMX-Hidalgo"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-10)"
@@ -255,6 +276,9 @@ Mientras continuar
             Mientras 'destino_valido' sea diferente a 0
             
             Si op==1
+
+                Hacer "CDMX-Tepotzotlan"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-5)"
@@ -283,6 +307,9 @@ Mientras continuar
 "                Mostrar matriz dentro del archivo 'Tepozotlan.txt'
                 
             Si op==2
+
+                Hacer "CDMX-Valle de Bravo"='destino'
+
                 Hacer indefinidamente
                     Mostrar "Seleccione un asiento (fila y columna) 
                     Mostrar "Fila (1-5)"
@@ -315,11 +342,30 @@ Mientras continuar
     Mientras 'seleccion valida' sea diferente a 0
 
     Si destino>0
-        Generar archivo 'Tickets/Ticket_"numero de ticket".txt'
+        Nombrar archivo 'Tickets/Ticket_"numero de ticket".txt'
 
+        Hacer archivo 'ticket'
+        Si 'ticket' no existe  
+            Mostrar "Error al generar el archivo del ticket"
+            Regresar error
+        
+        Mostrar "======================="
+        Mostrar "=   TICKET DE VIAJE   ="
+        Mostrar "======================="
+        Mostrar "Nombre: 'nombre'"
+        Mostrar "Correo: 'correo'"
+        Mostrar "Telefono: 'telefono'"
+        Mostrar "Destino: 'destino'"
+        Mostrar "Asiento: Fila 'fila' Columna 'columna'"
+        Mostrar "Numero de Ticket: 'ticket_numero'"
+        Mostrar "======================="
 
     Mostrar "¿Desea hacer otra reservación? (1: Sí, 0: No): "
-                    Dar y almacenar un valor de tipo entero representado por 'continuar'
-                                        Si 'Regresar a continuar'==1
-                        Hacer
-a                        Finalizar programa                        Si 'continuar'==0
+    Dar y almacenar un valor de tipo entero representado por 'reservacion'
+    Si reservacion==0
+        Finalizar programa
+    Si reservacion==1
+
+
+
+    Mostrar "Gracias por usar TravelBus. ¡Buen viaje!"
