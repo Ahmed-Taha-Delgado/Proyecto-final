@@ -229,6 +229,7 @@ int main() {
     char tipo;
     int filaSeleccionada, columnaSeleccionada;
     char texto[200];
+    int reservacion;
 
     mkdir("Tickets", 0777);
 
@@ -306,7 +307,7 @@ int main() {
                 seleccion_valida = 1;
                 break;
 
-                       case 'b':
+            case 'b':
                 puts("¿A qué destino deseas ir?");
                 puts("1.- CDMX-Puebla");
                 puts("2.- CDMX-Querétaro");
@@ -379,7 +380,23 @@ int main() {
         }
 
         printf("¿Desea hacer otra reservación? (1: Sí, 0: No): ");
-        scanf("%d", &continuar);
+        scanf("%d", &reservacion);
+        switch (reservacion)
+        {
+        case 0:
+            
+            break;
+        
+        case 1:
+
+            break;
+        
+        default:
+            puts("Opción inválida");
+            
+            break;
+        }
+        
         getchar();
     }
 
